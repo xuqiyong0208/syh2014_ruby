@@ -12,6 +12,7 @@ require 'will_paginate'
 require 'timerizer'
 require 'oj'
 
+require 'nokogiri'
 
 #require 'newrelic_rpm' #线上监控
 
@@ -23,10 +24,9 @@ db_opts = {
   user: Sinarey.dbconfig['username'],
   password: Sinarey.dbconfig['password'],
   max_connections: Sinarey.dbconfig['pool']||1,
+  textsize: 2147483647,
   logger: Logger.new(STDOUT)
 }
-
-p db_opts
 
 DB = Sequel.connect(db_opts)
 DB.extension(:pagination)

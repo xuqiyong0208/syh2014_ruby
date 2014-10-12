@@ -36,7 +36,7 @@ module WillPaginate
     
       def page_number(page)
         if page == current_page
-          tag(:em, page, :class => 'current')
+          "<a href='javascript:;' class='current'>#{page}</a>"
         else
           if @options[:max_page] && page.to_i > @options[:max_page]
             ""

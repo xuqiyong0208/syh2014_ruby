@@ -1,4 +1,4 @@
-var intDiff = parseInt(360000);//倒计时总秒数量
+window.intDiff = window.intDiff || 0;//倒计时总秒数量
 function timer(intDiff){
     window.setInterval(function(){
     var day=0,
@@ -21,5 +21,8 @@ function timer(intDiff){
     }, 1000);
 } 
 $(function(){
-    timer(intDiff);
+    if(intDiff>0){
+        timer(intDiff);
+        $('#opening_time_clock').removeClass('hidden');
+    }
 });

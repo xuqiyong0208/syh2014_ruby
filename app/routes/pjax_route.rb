@@ -25,9 +25,13 @@ class PjaxRoute < PjaxController
 
   route :get, '/ssxw' do dispatch(:ssxw_page) end   #赛事新闻
 
+  route :get, '/ssxw/:id' do dispatch(:ssxw_detail_page) end   #赛事新闻-详细
+
   route :get, '/sstwh' do dispatch(:sstwh_page) end   #市运题外话
 
   route :get, '/tzgg' do dispatch(:tzgg_page) end   #通知公告
+
+  route :get, '/tzgg/:id' do dispatch(:tzgg_detail_page) end   #通知公告-详细
 
   route :get, '/zwh' do dispatch(:zwh_page) end #组委会
 

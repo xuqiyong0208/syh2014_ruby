@@ -8,6 +8,7 @@ class ApplicationController < Sinarey::Application
   before do
     @temp = {}
     @temp[:request_time] = Time.now
+    @opening_time = (Time.new(2014,11,11,20,0,0) - Time.now).to_i
   end
 
   after do

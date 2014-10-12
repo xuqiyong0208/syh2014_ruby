@@ -1,0 +1,19 @@
+<div class="main clear">
+    <div class="box">
+        <div class="m_title">
+            <h2>当前位置：资讯/通知公告</h2>
+            <!-- <div class="search"><input type="text" value="搜索关键字" /><button>搜索</button></div> -->
+        </div>
+        <div class="m_body">
+            <div class="article">
+                <div class="article_title">
+                    <h1><%~ @news.ctitle %></h1>
+                    <p><span>发布时间：<%~ @news.tdate.strftime('%Y-%m-%d') %></span><span>作者：<%~ @news.cusername %></span><span>来源：<%~ @news.cauthor %></span></p>
+                </div>
+                <div class="article_con">
+                    <%= @content %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

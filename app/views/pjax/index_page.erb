@@ -24,31 +24,23 @@
       <div class="notice_body">
         <ul class="notice_b1">
           <% @tongzhi.each do |tongzhi| %>
-          <li><a href="javascript:;"><%= tongzhi.ctitle %></a></li>
+          <li><a href="javascript:;"><%~ tongzhi.ctitle %></a></li>
           <% end %>
         </ul>
         <ul class="notice_b2" style="display: none">
           <% @news.each do |news| %>
-          <li><a href="javascript:;"><%= news.ctitle %></a></li>
+          <li><a href="javascript:;"><%~ news.ctitle %></a></li>
           <% end %>
         </ul>
         <ul class="notice_b3" style="display: none">
-          <li><a href="#">省运会三项赛事落幕 济宁队斩获6 ...</a></li>
-          <li><a href="#">省体育局到任城赛区视察体操比赛</a></li>
-          <li><a href="#">23届省运会气象服务网站开通第三届省老运会30日开幕</a></li>
-          <li><a href="#">省运会“武术套路”比赛在梁山举行</a></li>
-          <li><a href="#">23届省运会体操比赛在任城区开赛确保省老年人运动会万无一失</a></li>
-          <li><a href="#">激扬青春—赛事志愿者实录太白湖新区倾情助力省运会</a></li>
-          <li><a href="#">齐心协力办盛会——兖州区精心筹备掠影</a></li>
+          <% @qing_gonggao.each do |hsh| %>
+          <li><a href="<%~ hsh[:href] %>" target="_blank"><%~ hsh[:content] %></a></li>
+          <% end %>
         </ul>
         <ul class="notice_b4" style="display: none">
-          <li><a href="#">省运会三项赛事落幕 济宁队斩获6 ...</a></li>
-          <li><a href="#">省体育局到任城赛区视察体操比赛</a></li>
-          <li><a href="#">23届省运会气象服务网站开通第三届省老运会30日开幕</a></li>
-          <li><a href="#">省运会小记者走进体操比赛现场采访小运动员</a></li>
-          <li><a href="#">省运会击剑决赛落幕 济宁个人团体5金5银1铜</a></li>
-          <li><a href="#">激扬青春—赛事志愿者实录太白湖新区倾情助力省运会</a></li>
-          <li><a href="#">齐心协力办盛会——兖州区精心筹备掠影</a></li>
+          <% @qing_news.each do |hsh| %>
+          <li><a href="<%~ hsh[:href] %>" target="_blank"><%~ hsh[:content] %></a></li>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -212,13 +204,16 @@
   </div>
   
   <div class="box moment">
-    <div class="b_title"><h1>精彩瞬间</h1><a href="#">更多...</a></div>
+    <div class="b_title">
+      <h1>精彩瞬间</h1>
+      <!-- <a href="#">更多...</a> -->
+    </div>
     <div class="moment_con">
       <ul>
-        <li><a href="#"><img src="<%= static_url "/images/moment-1.jpg" %>" /></a></li>
-        <li><a href="#"><img src="<%= static_url "/images/moment-2.jpg" %>" /></a><a href="#"><img src="<%= static_url "/images/moment-3.jpg" %>" /></a></li>
-        <li><a href="#"><img src="<%= static_url "/images/moment-4.jpg" %>" /></a></li>
-        <li><a href="#"><img src="<%= static_url "/images/moment-3.jpg" %>" /></a><a href="#"><img src="<%= static_url "/images/moment-2.jpg" %>" /></a></li>
+        <li><a href="javascript:;"><img src="<%= static_url "/images/moment-1.jpg" %>" /></a></li>
+        <li><a href="javascript:;"><img src="<%= static_url "/images/moment-2.jpg" %>" /></a><a href="javascript:;"><img src="<%= static_url "/images/moment-3.jpg" %>" /></a></li>
+        <li><a href="javascript:;"><img src="<%= static_url "/images/moment-4.jpg" %>" /></a></li>
+        <li><a href="javascript:;"><img src="<%= static_url "/images/moment-3.jpg" %>" /></a><a href="javascript:;"><img src="<%= static_url "/images/moment-2.jpg" %>" /></a></li>
       </ul>
     </div>
   </div>

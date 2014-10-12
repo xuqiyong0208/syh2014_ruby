@@ -4,11 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>上海市运动会</title>
 <link href="<%= static_url "/style/style.css" %>" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="<%= static_url "/js/jQuery-v1.9.0.js" %>"></script>
-<script type="text/javascript" src="<%= static_url "/js/main.js" %>"></script>
-<script type="text/javascript" src="<%= static_url "/js/countDown.js" %>"></script>
-
-
+<script src="<%= static_url "/js/jquery.js" %>"></script>
+<script src="<%= static_url "/js/main.js" %>"></script>
+<script src="<%= static_url "/js/countDown.js" %>"></script>
+<style type="text/css">
+  .hidden {
+    display:none;
+  }
+</style>
+<script type="text/javascript">
+  window.intDiff = <%= @opening_time > 0 ? @opening_time : 0 %>; //倒计时总秒数量
+</script>
 </head>
 
 <body>
@@ -16,13 +22,15 @@
     <div class="box">
       <div class="head_countDown">
                 <h1>上海市第十五届运动会</h1>
-                <div class="countDown"><p>距上海市第十五届运动会开幕还有</p>
-                <div class="time-item">
-                    <span id="day_show">0天</span>
-                    <strong id="hour_show">0时</strong>
-                    <strong id="minute_show">0分</strong>
-                    <strong id="second_show">0秒</strong>
-                </div>
+                <div class="hidden" id="opening_time_clock">
+                  <div class="countDown"><p>距上海市第十五届运动会开幕还有</p>
+                    <div class="time-item">
+                        <span id="day_show">0天</span>
+                        <strong id="hour_show">0时</strong>
+                        <strong id="minute_show">0分</strong>
+                        <strong id="second_show">0秒</strong>
+                    </div>
+                  </div>
                 </div>
         </div>
         <div class="nav">
@@ -33,7 +41,7 @@
                       <a href="/zwh">组委会</a>
                         <a href="/tzgg">通知公告</a>
                         <a href="/ssxw">赛事新闻</a>
-                        <a href="/qxsd">青训速递</a>
+                        <a href="http://shqx.shsports.gov.cn/WebSite/html/QX/qx_shhxsydh/List/list_0.htm" target="_blank">青训速递</a>
                     </div>
                 </li>
                 <li><span>赛事</span>

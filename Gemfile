@@ -26,6 +26,8 @@ end
 
 gem 'timerizer'
 
+gem 'nokogiri'
+
 #my gem
 gem 'sinarey_support'
 
