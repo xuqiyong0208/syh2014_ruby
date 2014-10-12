@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>上海市运动会</title>
+<link href="<%= static_url "/style/style.css" %>" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="<%= static_url "/js/jQuery-v1.9.0.js" %>"></script>
+<script type="text/javascript" src="<%= static_url "/js/main.js" %>"></script>
+<script type="text/javascript" src="<%= static_url "/js/countDown.js" %>"></script>
+
+
+</head>
+
+<body>
+<div class="head">
+    <div class="box">
+      <div class="head_countDown">
+                <h1>上海市第十五届运动会</h1>
+                <div class="countDown"><p>距上海市第十五届运动会开幕还有</p>
+                <div class="time-item">
+                    <span id="day_show">0天</span>
+                    <strong id="hour_show">0时</strong>
+                    <strong id="minute_show">0分</strong>
+                    <strong id="second_show">0秒</strong>
+                </div>
+                </div>
+        </div>
+        <div class="nav">
+          <ul class="firstMenu">
+              <li class="home"><a href="/">首页</a></li>
+                <li><span>资讯</span>
+                  <div class="secondMenu">
+                      <a href="/zwh">组委会</a>
+                        <a href="/tzgg">通知公告</a>
+                        <a href="/ssxw">赛事新闻</a>
+                        <a href="/qxsd">青训速递</a>
+                    </div>
+                </li>
+                <li><span>赛事</span>
+                  <div class="secondMenu liw">
+                      <a href="/jsrc">竞赛日程</a>
+                        <a href="/jsgc">竞赛规程</a>
+                        <a href="javascript:;">排行榜</a>
+                        <a href="javascript:;">单项成绩</a>
+                        <a href="/dpdf">带牌带分</a>
+                        <a href="/ccjl">超创记录</a>
+                    </div>
+                </li>
+                <li><span>服务</span>
+                  <div class="secondMenu">
+                      <a href="/ssjt">赛事交通</a>
+                        <a href="/dhwj">大会文件</a>
+                        <a href="/xzzx">下载中心</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<%= yield %>
+
+<div class="foot"></div>
+
+</body>
+</html>

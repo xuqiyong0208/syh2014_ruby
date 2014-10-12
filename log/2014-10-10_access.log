@@ -1,0 +1,14 @@
+# Logfile created on 2014-10-10 14:36:40 +0800 by logger.rb/41954
+14:36:40 | GET  |  | _200_ |  | 41 ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+14:36:41 | GET  | /favicon.ico | _404_ |  | 1  ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+14:41:14 | GET  |  | _500_ |  | 1  ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+14:41:14 | GET  | /__sinatra__/500.png | _404_ |  | 5  ms | 127.0.0.1 | localhost | http://localhost:8080/ | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+14:41:48 | GET  |  | _500_ |  | 105ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+14:41:48 | GET  | /__sinatra__/500.png | _404_ |  | 20 ms | 127.0.0.1 | localhost | http://localhost:8080/ | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+14:42:36 | GET  |  | _500_ |  | 157ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+14:42:36 | GET  | /__sinatra__/500.png | _404_ |  | 13 ms | 127.0.0.1 | localhost | http://localhost:8080/ | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+14:42:40 | GET  |  | _500_ |  | 103ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+14:42:40 | GET  | /__sinatra__/500.png | _404_ |  | 2  ms | 127.0.0.1 | localhost | http://localhost:8080/ | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+14:48:02 | GET  |  | _500_ |  | 116ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+14:48:02 | GET  | /__sinatra__/500.png | _404_ |  | 10 ms | 127.0.0.1 | localhost | http://localhost:8080/ | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+14:52:21 | GET  |  | _200_ |  | 90 ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36

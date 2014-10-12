@@ -1,0 +1,256 @@
+<div class="main clear">
+  <div class="box">
+    <div class="ad">
+      <div class="scroll">
+        <ul class="slider">
+          <% @pics.each do |pic| %>
+          <li><img src="<%= "http://116.228.3.80/img/display/#{pic.cpicurl}" %>" onclick='window.open("<%= escape_javascript pic.clink %>")'/></li>
+          <% end %>
+        </ul>
+        <ul class="num">
+          <% @pics.each_with_index do |pic, i| %>
+          <li class="<%= "on" if i.zero? %>"><%= i+1 %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="notice">
+      <ul class="notice_head">
+        <li class="notice_t1">通知公告</li>
+        <li class="notice_t2">赛事新闻</li>
+        <li class="notice_t3">青训公告</li>
+        <li class="notice_t4">青训新闻</li>
+      </ul>
+      <div class="notice_body">
+        <ul class="notice_b1">
+          <% @tongzhi.each do |tongzhi| %>
+          <li><a href="javascript:;"><%= tongzhi.ctitle %></a></li>
+          <% end %>
+        </ul>
+        <ul class="notice_b2" style="display: none">
+          <% @news.each do |news| %>
+          <li><a href="javascript:;"><%= news.ctitle %></a></li>
+          <% end %>
+        </ul>
+        <ul class="notice_b3" style="display: none">
+          <li><a href="#">省运会三项赛事落幕 济宁队斩获6 ...</a></li>
+          <li><a href="#">省体育局到任城赛区视察体操比赛</a></li>
+          <li><a href="#">23届省运会气象服务网站开通第三届省老运会30日开幕</a></li>
+          <li><a href="#">省运会“武术套路”比赛在梁山举行</a></li>
+          <li><a href="#">23届省运会体操比赛在任城区开赛确保省老年人运动会万无一失</a></li>
+          <li><a href="#">激扬青春—赛事志愿者实录太白湖新区倾情助力省运会</a></li>
+          <li><a href="#">齐心协力办盛会——兖州区精心筹备掠影</a></li>
+        </ul>
+        <ul class="notice_b4" style="display: none">
+          <li><a href="#">省运会三项赛事落幕 济宁队斩获6 ...</a></li>
+          <li><a href="#">省体育局到任城赛区视察体操比赛</a></li>
+          <li><a href="#">23届省运会气象服务网站开通第三届省老运会30日开幕</a></li>
+          <li><a href="#">省运会小记者走进体操比赛现场采访小运动员</a></li>
+          <li><a href="#">省运会击剑决赛落幕 济宁个人团体5金5银1铜</a></li>
+          <li><a href="#">激扬青春—赛事志愿者实录太白湖新区倾情助力省运会</a></li>
+          <li><a href="#">齐心协力办盛会——兖州区精心筹备掠影</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="box rankingList">
+    <div class="b_title"><h1>奖牌榜</h1><a href="#">更多...</a></div>
+    <div class="adolescent">
+      <h2>青少年组</h2>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableList">
+        <thead>
+          <tr>
+            <th>名词</th>
+            <th>单位</th>
+            <th>团体奖牌</th>
+            <th>团体积分</th>
+            <th>重点项目奖牌</th>
+            <th>重点项目积分</th>
+          </tr>
+        </thead>
+        <tr>
+          <td>1.</td>
+          <td>徐汇</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>2.</td>
+          <td>宝山</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>3.</td>
+          <td>黄浦</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>4.</td>
+          <td>普陀</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+    </div>
+    <div class="colleges">
+      <h2>高校组</h2>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableList">
+        <thead>
+          <tr>
+            <th>团体奖牌</th>
+            <th>团体积分</th>
+          </tr>
+        </thead>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>5</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <div class="box schedule">
+    <div class="b_title"><h1>竞赛日程</h1><a href="#">更多...</a></div>
+    <table width="100%" border="0" cellspacing="5" cellpadding="0">
+      <thead>
+        <tr>
+          <th>全部赛程</th>
+          <th><em class="orange_font">星期日</em><span>31日</span></th>
+          <th><em>星期一</em><span>1日</span></th>
+          <th><em>星期二</em><span>2日</span></th>
+          <th><em>星期三</em><span>3日</span></th>
+          <th><em>星期四</em><span>4日</span></th>
+          <th><em>星期五</em><span>5日</span></th>
+          <th><em class="orange_font">星期六</em><span>6日</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>开幕式</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>田径</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>游泳</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>武术</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>铅球</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>铁饼</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="box moment">
+    <div class="b_title"><h1>精彩瞬间</h1><a href="#">更多...</a></div>
+    <div class="moment_con">
+      <ul>
+        <li><a href="#"><img src="<%= static_url "/images/moment-1.jpg" %>" /></a></li>
+        <li><a href="#"><img src="<%= static_url "/images/moment-2.jpg" %>" /></a><a href="#"><img src="<%= static_url "/images/moment-3.jpg" %>" /></a></li>
+        <li><a href="#"><img src="<%= static_url "/images/moment-4.jpg" %>" /></a></li>
+        <li><a href="#"><img src="<%= static_url "/images/moment-3.jpg" %>" /></a><a href="#"><img src="<%= static_url "/images/moment-2.jpg" %>" /></a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="box theme">
+    <div class="weather"><iframe allowtransparency="true" frameborder="0" width="140" height="203" scrolling="no" src="http://tianqi.2345.com/plugin/widget/index.htm?s=2&z=1&t=1&v=1&d=2&bd=0&k=000000&f=&q=1&e=1&a=1&c=58362&w=140&h=203&align=left"></iframe></div>
+    <div class="b_title"><h1>市运题外话</h1></div>
+    <div class="theme_con">
+      <ul>
+        <li><a href="#">省运会三项赛事落幕 济宁队斩获6 ...</a></li>
+        <li><a href="#">23届省运会气象服务网站开通第三届省老运会30日开幕</a></li>
+        <li><a href="#">省运会小记者走进体操比赛现场采访小运动员省运会击剑决赛落幕</a></li>
+        <li><a href="#">“武术套路”比赛在梁山举行</a></li>
+        <li><a href="#">23届省运会体操比赛在任城区开赛确保省老年人运动会万无一失</a></li>
+        <li><a href="#">激扬青春—赛事志愿者实录太白湖新区倾情助力省运会</a></li>
+        <li><a href="#">齐心协力办盛会——兖州区精心筹备掠影</a></li>
+      </ul>
+    </div>
+    
+  </div>
+  
+  <div class="box links">
+    <div class="b_title"><h1>友情连接</h1></div>
+    <div class="links_con">
+      <ul>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+      </ul>
+    </div>
+  </div>
+</div>s
