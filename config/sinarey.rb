@@ -25,6 +25,7 @@ db_opts = {
   password: Sinarey.dbconfig['password'],
   max_connections: Sinarey.dbconfig['pool']||1,
   textsize: 2147483647,
+  tds_version: 8.0,
   logger: nil && Logger.new(STDOUT)
 }
 
