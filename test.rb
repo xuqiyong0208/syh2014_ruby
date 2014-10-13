@@ -4,7 +4,7 @@
 
 # p agent =~ /abc|def/
 
-p "... Indy Library ..." =~  /Indy Library|MJ12bot|AhrefsBot|Wget|^PHP|Ruby|Python/
+#p "... Indy Library ..." =~  /Indy Library|MJ12bot|AhrefsBot|Wget|^PHP|Ruby|Python/
 
 # p agent =~ /Googlebot|Baiduspider/
 
@@ -124,3 +124,12 @@ p "... Indy Library ..." =~  /Indy Library|MJ12bot|AhrefsBot|Wget|^PHP|Ruby|Pyth
 
 # trap(:INT) {server.shutdown}
 # server.start
+
+
+arr = [ [1], [1,2,3], [1,2] ]
+
+
+arr.sort! { |x,y| y.length <=> x.length }  #=> ["e", "d", "c", "b", "a"]
+
+p arr
+

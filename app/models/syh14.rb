@@ -10,6 +10,20 @@ class WebNews < Sequel::Model
   set_dataset :web_news
 end
 
+#学运会项目
+class WebProject < Sequel::Model
+  set_dataset "学运会项目".to_sym
+end
+
+#单项赛程表
+class WebProjectSchedule < Sequel::Model
+  set_dataset "比赛列表".to_sym
+end
+
+
+
+
+
 
 
 
