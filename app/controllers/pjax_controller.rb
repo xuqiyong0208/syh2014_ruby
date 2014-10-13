@@ -68,7 +68,7 @@ class PjaxController < ApplicationController
   def dhwj_page
     @list = []
     dir = "#{Sinarey.root}/public/dahuiwenjian/"
-    files = Dir.new(dir).to_a[2..-1]
+    files = Dir.new(dir).to_a.sort[2..-1]
 
     @count = files.size
     @page = (tmp = params[:page].to_i) > 0 ? tmp : 1
@@ -88,7 +88,7 @@ class PjaxController < ApplicationController
 
     @list = []
     dir = "#{Sinarey.root}/public/download/"
-    files = Dir.new(dir).to_a[2..-1]
+    files = Dir.new(dir).to_a.sort[2..-1]
 
     @count = files.size
     @page = (tmp = params[:page].to_i) > 0 ? tmp : 1
