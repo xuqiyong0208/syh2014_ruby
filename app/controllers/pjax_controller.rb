@@ -25,6 +25,32 @@ class PjaxController < ApplicationController
 
     @news = WebNews.where(nid: 26, nshenhe: 1).order(Sequel.desc(:ntop)).order_append(Sequel.desc(:nid_news)).limit(7)
 
+    #奖牌榜
+    @jiangpais = DB.fetch("select TOP 4 * from dbo.系列赛总分榜 order by zjp + zyp + ztp DESC, zjp DESC, zyp DESC, ztp DESC")
+
+    ttkeys = @jiangpais.map{|jiangpai| jiangpai[:ttkey] }
+
+    #p ttkeys
+
+    tmp_hsh = {}
+    tmp_list = ShiYunHuiZF.where(ttkey: ttkeys)
+    tmp_list.each do |jiangpai2|
+      tmp_hsh[jiangpai2[:ttkey]] = jiangpai2
+    end
+
+    @jiangpais2 = []
+    ttkeys.each do |ttkey|
+      @jiangpais2 << tmp_hsh[ttkey]
+    end
+
+    #puts @jiangpais2
+
+    #竞赛日程 本周
+    @week = get_current_week
+    @week_schedule = get_currnet_week_schedule(@week, 6)
+
+    #p @week_schedule
+
     @qing_gonggao = fetch_qing_gonggao
 
     @qing_news = fetch_qing_news
@@ -84,20 +110,33 @@ class PjaxController < ApplicationController
   end
 
   #带牌带分
-  def dpdf_page 
+  def phb_page 
 
-    halt_page(:dpdf_page)
+    @jiangpais = DB.fetch("select * from dbo.市运会单位总分 order by zdf desc")
+
+    halt_page(:phb_page)
   end
 
   #竞赛规程
   def jsgc_page 
+
+    @projects = WebProjectSchedule.where(zhkey: 3).all
+
+    #puts @projects.size
+
+    # @projects.each do |project|
+    #   puts project.inspect
+    # end
 
     halt_page(:jsgc_page)
   end
 
   #竞赛规程
   def jsgc_detail_page 
-
+    dhkey = params[:id].to_i
+    @project = WebProjectSchedule.where(zhkey: 3, dhkey: dhkey).first
+    halt_404 if @project.nil?
+    
     halt_page(:jsgc_detail_page)
   end
 
@@ -125,8 +164,8 @@ class PjaxController < ApplicationController
 
   #赛事新闻-详细
   def ssxw_detail_page
-
-    @news = WebNews.where(nid: 26, nshenhe: 1, nid_news: params[:id]).first
+    nid_news = params[:id].to_i
+    @news = WebNews.where(nid: 26, nshenhe: 1, nid_news: nid_news).first
     halt_404 if @news.nil?
 
     @content = db_content(@news.ccontent)
@@ -152,7 +191,8 @@ class PjaxController < ApplicationController
 
   #通知公告-详细
   def tzgg_detail_page
-    @news = WebNews.where(nid: 25, nshenhe: 1, nid_news: params[:id]).first
+    nid_news = params[:id].to_i
+    @news = WebNews.where(nid: 25, nshenhe: 1, nid_news: nid_news).first
     halt_404 if @news.nil?
 
     @content = db_content(@news.ccontent)
@@ -166,6 +206,47 @@ class PjaxController < ApplicationController
     halt_page(:zwh_page)
   end
 
+  #单项成绩
+  def dxcj_page
+
+    @projects = WebProjectSchedule.where(zhkey: 3).all
+
+    halt_page(:dxcj_page)
+  end
+
+  #单项成绩 - 比赛列表
+  def dxcj_detail_page
+
+    dhkey = params[:id].to_i
+    @project = WebProjectSchedule.where(zhkey: 3, dhkey: dhkey).first
+    halt_404 if @project.nil?
+
+    @games = DB.fetch("select dbo.比赛项目清单.*,dbo.web_uploadhtml.* from dbo.比赛项目清单 left join dbo.web_uploadhtml on dbo.比赛项目清单.imkey = dbo.web_uploadhtml.nkey where dhkey = #{@project[:dhkey]} order by sex ASC, zubie ASC, itmc ASC ")
+
+    # @games.each do |game|
+    #   puts game.inspect
+    #   break
+    # end
+
+    halt_page(:dxcj_detail_page)
+  end
+
+  #单项成绩 - 比赛成绩
+  def dxcj_score_page
+
+    dhkey = params[:id].to_i
+    @project = WebProjectSchedule.where(zhkey: 3, dhkey: dhkey).first
+    halt_404 if @project.nil?
+
+    imkey = params[:imkey].to_i
+    @game = DB.fetch("select dbo.比赛项目清单.*,dbo.web_uploadhtml.* from dbo.比赛项目清单 left join dbo.web_uploadhtml on dbo.比赛项目清单.imkey = dbo.web_uploadhtml.nkey where imkey = #{imkey} order by sex ASC, zubie ASC, itmc ASC ").first
+    halt_404 if @game.nil?
+
+    @records = DB.fetch("select * from dbo.比赛项目人员 where imkey = #{@game[:imkey]} and mingci > 0 order by mingci ASC, chengji DESC, dwjc ASC, tzmc ASC").to_a
+    @records += DB.fetch("select * from dbo.比赛项目人员 where imkey = #{@game[:imkey]} and mingci = 0 order by  chengji DESC, dwjc ASC, tzmc ASC").to_a
+
+    halt_page(:dxcj_score_page)
+  end
 
 
 

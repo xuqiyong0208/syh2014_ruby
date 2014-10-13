@@ -1,0 +1,34 @@
+<div class="main clear">
+	<div class="box">
+    	<div class="m_title">
+        	<h2>当前位置：赛事/单项成绩/<%~ @project[:xmmc].to_s.strip %></h2>
+        </div>
+        <div class="m_body">
+          <div class="competition">
+            
+            <div class="competition_con">
+              <table width="100%" border="0" cellspacing="5" cellpadding="0">
+                <thead>
+                  <tr>
+                    <th>比赛项目</th>
+                    <th>性别</th>
+                    <th>组别</th>
+                    <th>&nbsp;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @games.each do |game| %>
+                  <tr>
+                    <td><%~ game[:itmc].to_s.strip %></td>
+                    <td><%~ game[:sex].to_s.strip %></td>
+                    <td><%~ game[:zubie].to_s.strip %></td>
+                    <td><a href="/dxcj/<%~ game[:dhkey] %>/<%~ game[:imkey] %>" style="color:#333;">查看成绩</a></td>
+                  </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

@@ -226,3 +226,218 @@
 02:06:15 | GET  | /jsgc | _200_ |  | 10 ms | 127.0.0.1 | localhost | http://localhost:3000/jsrc | Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0; QQBrowser/7.7.26717.400) like Gecko
 02:06:18 | GET  | /jsrc | _200_ |  | 9  ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0; QQBrowser/7.7.26717.400) like Gecko
 02:06:25 | GET  | /jsrc | _200_ |  | 8  ms | 127.0.0.1 | localhost | http://localhost:3000/jsrc | Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0; QQBrowser/7.7.26717.400) like Gecko
+19:37:04 | GET  |  | _200_ |  | 1125ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+19:37:06 | GET  | /favicon.ico | _404_ |  | 6  ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+19:38:03 | GET  |  | _200_ |  | 1003ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+19:41:10 | GET  |  | _200_ |  | 1076ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+19:48:46 | GET  |  | _200_ |  | 961ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+19:50:56 | GET  |  | _200_ |  | 979ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+19:59:11 | GET  |  | _500_ |  | 537ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+19:59:11 | GET  | /__sinatra__/500.png | _404_ |  | 9  ms | 127.0.0.1 | localhost | http://localhost:3000/ | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+19:59:30 | GET  |  | _200_ |  | 1043ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+20:00:05 | GET  |  | _200_ |  | 997ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+20:00:47 | GET  |  | _200_ |  | 1056ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+20:01:17 | GET  |  | _200_ |  | 980ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+20:01:23 | GET  |  | _200_ |  | 1110ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+20:02:00 | GET  |  | _200_ |  | 967ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+20:02:34 | GET  |  | _200_ |  | 971ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+20:04:04 | GET  |  | _200_ |  | 1142ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+20:05:04 | GET  |  | _200_ |  | 1012ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+20:05:13 | GET  |  | _200_ |  | 1038ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+20:05:25 | GET  |  | _200_ |  | 999ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+20:05:37 | GET  |  | _200_ |  | 994ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+20:05:50 | GET  |  | _200_ |  | 3986ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+20:06:19 | GET  |  | _200_ |  | 1037ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+20:22:49 | GET  |  | _200_ |  | 1018ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:12:04 | GET  |  | _500_ |  | 4356ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:12:04 | GET  | /__sinatra__/500.png | _404_ |  | 5  ms | 127.0.0.1 | localhost | http://localhost:3000/ | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:12:54 | GET  |  | _500_ |  | 1078ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:12:54 | GET  | /__sinatra__/500.png | _404_ |  | 5  ms | 127.0.0.1 | localhost | http://localhost:3000/ | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:13:12 | GET  |  | _500_ |  | 1032ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:13:12 | GET  | /__sinatra__/500.png | _404_ |  | 4  ms | 127.0.0.1 | localhost | http://localhost:3000/ | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:15:41 | GET  |  | _200_ |  | 3336ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:16:36 | GET  |  | _200_ |  | 3113ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:16:55 | GET  |  | _200_ |  | 2943ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:18:39 | GET  |  | _200_ |  | 2951ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:34:12 | GET  |  | _200_ |  | 5139ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:34:57 | GET  |  | _200_ |  | 5188ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:35:13 | GET  |  | _200_ |  | 5248ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:35:34 | GET  |  | _200_ |  | 4924ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:40:35 | GET  |  | _500_ |  | 2531ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:40:35 | GET  | /__sinatra__/500.png | _404_ |  | 3  ms | 127.0.0.1 | localhost | http://localhost:3000/ | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:41:15 | GET  |  | _200_ |  | 7789ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:42:50 | GET  |  | _200_ |  | 6764ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:45:26 | GET  |  | _200_ |  | 5349ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:48:32 | GET  | /dpdf | _200_ |  | 22 ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:51:01 | GET  | /dpdf | _200_ |  | 4  ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:51:20 | GET  | /dpdf | _200_ |  | 6  ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:51:23 | GET  | /dpdf | _200_ |  | 5  ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:53:36 | GET  | /dpdf | _200_ |  | 820ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:55:19 | GET  | /dpdf | _200_ |  | 608ms | 127.0.0.1 | localhost | http://localhost:3000/dpdf | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:55:23 | GET  | /ccjl | _200_ |  | 18 ms | 127.0.0.1 | localhost | http://localhost:3000/dpdf | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:55:26 | GET  | /dpdf | _200_ |  | 736ms | 127.0.0.1 | localhost | http://localhost:3000/ccjl | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:55:38 | GET  | /ccjl | _200_ |  | 7  ms | 127.0.0.1 | localhost | http://localhost:3000/dpdf | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:55:50 | GET  | /dpdf | _200_ |  | 609ms | 127.0.0.1 | localhost | http://localhost:3000/ccjl | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:56:00 | GET  | /dpdf | _200_ |  | 611ms | 127.0.0.1 | localhost | http://localhost:3000/dpdf | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:56:17 | GET  | /dpdf | _200_ |  | 618ms | 127.0.0.1 | localhost | http://localhost:3000/dpdf | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:57:09 | GET  | /jsrc | _200_ |  | 23 ms | 127.0.0.1 | localhost | http://localhost:3000/dpdf | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:57:35 | GET  | /ccjl | _200_ |  | 8  ms | 127.0.0.1 | localhost | http://localhost:3000/jsrc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:57:36 | GET  | /dpdf | _200_ |  | 612ms | 127.0.0.1 | localhost | http://localhost:3000/ccjl | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:57:40 | GET  | /jsgc | _200_ |  | 58 ms | 127.0.0.1 | localhost | http://localhost:3000/dpdf | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:57:42 | GET  | /jsgc | _200_ |  | 8  ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:57:49 | GET  | /jsgc | _200_ |  | 9  ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:58:00 | GET  | /dpdf | _200_ |  | 606ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:58:03 | GET  | /jsgc | _200_ |  | 9  ms | 127.0.0.1 | localhost | http://localhost:3000/dpdf | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:58:35 | GET  | /jsgc | _200_ |  | 6  ms | 127.0.0.1 | localhost | http://localhost:3000/dpdf | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:59:33 | GET  | /jsgc | _200_ |  | 12 ms | 127.0.0.1 | localhost | http://localhost:3000/dpdf | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+21:59:35 | GET  | /jsgc | _200_ |  | 8  ms | 127.0.0.1 | localhost | http://localhost:3000/dpdf | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:00:21 | GET  | /jsgc | _200_ |  | 7  ms | 127.0.0.1 | localhost | http://localhost:3000/dpdf | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:00:23 | GET  | /jsrc | _200_ |  | 7  ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:00:24 | GET  | /jsgc | _200_ |  | 6  ms | 127.0.0.1 | localhost | http://localhost:3000/jsrc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:00:26 | GET  | /dpdf | _200_ |  | 610ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:00:44 | GET  | /dpdf | _200_ |  | 608ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:00:56 | GET  | /zwh | _200_ |  | 20 ms | 127.0.0.1 | localhost | http://localhost:3000/dpdf | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:01:03 | GET  |  | _200_ |  | 5247ms | 127.0.0.1 | localhost | http://localhost:3000/zwh | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:01:19 | GET  |  | _200_ |  | 5532ms | 127.0.0.1 | localhost | http://localhost:3000/zwh | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:01:27 | GET  | /dpdf | _200_ |  | 606ms | 127.0.0.1 | localhost | http://localhost:3000/ | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:01:36 | GET  | /dpdf | _200_ |  | 609ms | 127.0.0.1 | localhost | http://localhost:3000/dpdf | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:01:40 | GET  | /tzgg | _200_ |  | 1016ms | 127.0.0.1 | localhost | http://localhost:3000/dpdf | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:01:43 | GET  | /tzgg/172 | _200_ |  | 153ms | 127.0.0.1 | localhost | http://localhost:3000/tzgg | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:01:50 | GET  | /jsrc | _200_ |  | 8  ms | 127.0.0.1 | localhost | http://localhost:3000/tzgg | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:03:36 | GET  | /jsrc | _200_ |  | 5  ms | 127.0.0.1 | localhost | http://localhost:3000/jsrc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:03:50 | GET  |  | _200_ |  | 5220ms | 127.0.0.1 | localhost | http://localhost:3000/jsrc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:04:18 | GET  | /tzgg | _200_ |  | 998ms | 127.0.0.1 | localhost | http://localhost:3000/ | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:05:21 | GET  |  | _200_ |  | 5167ms | 127.0.0.1 | localhost | http://localhost:3000/jsrc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:05:24 | GET  | /tzgg/190 | _200_ |  | 37 ms | 127.0.0.1 | localhost | http://localhost:3000/ | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:05:29 | GET  | /ssxw/160 | _200_ |  | 55 ms | 127.0.0.1 | localhost | http://localhost:3000/ | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:05:36 | GET  | /ssxw/82 | _200_ |  | 34 ms | 127.0.0.1 | localhost | http://localhost:3000/ | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:05:44 | GET  | /dpdf | _200_ |  | 609ms | 127.0.0.1 | localhost | http://localhost:3000/ | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:05:52 | GET  | /ccjl | _200_ |  | 4  ms | 127.0.0.1 | localhost | http://localhost:3000/dpdf | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:05:54 | GET  | /dpdf | _200_ |  | 765ms | 127.0.0.1 | localhost | http://localhost:3000/ccjl | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:07:32 | GET  | /dpdf | _404_ |  | 2  ms | 127.0.0.1 | localhost | http://localhost:3000/ccjl | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:07:35 | GET  | /dpdf | _404_ |  | 6  ms | 127.0.0.1 | localhost | http://localhost:3000/dpdf | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:07:37 | GET  | /phb | _200_ |  | 610ms | 127.0.0.1 | localhost | http://localhost:3000/dpdf | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:08:19 | GET  | /phb | _200_ |  | 887ms | 127.0.0.1 | localhost | http://localhost:3000/dpdf | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:08:22 | GET  | /phb | _200_ |  | 616ms | 127.0.0.1 | localhost | http://localhost:3000/phb | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:08:22 | GET  | /jsgc | _200_ |  | 5  ms | 127.0.0.1 | localhost | http://localhost:3000/phb | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:08:36 | GET  | /jsgc | _200_ |  | 5  ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:21:09 | GET  | /jsgc | _200_ |  | 6  ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:21:37 | GET  | /jsgc | _200_ |  | 162ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:23:42 | GET  | /jsgc | _200_ |  | 66 ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:24:06 | GET  | /jsgc | _200_ |  | 42 ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:24:29 | GET  | /jsgc | _500_ |  | 4  ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:24:29 | GET  | /__sinatra__/500.png | _404_ |  | 7  ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:24:42 | GET  | /jsgc | _200_ |  | 117ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:24:54 | GET  | /jsgc | _200_ |  | 184ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:25:19 | GET  | /jsgc | _200_ |  | 40 ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:25:45 | GET  | /jsgc | _200_ |  | 40 ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:26:09 | GET  | /jsgc | _200_ |  | 56 ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:27:09 | GET  | /jsgc | _200_ |  | 37 ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:47:32 | GET  | /jsgc | _200_ |  | 113ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:47:45 | GET  | /jsgc | _200_ |  | 371ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:48:36 | GET  | /jsrc | _200_ |  | 6  ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:48:57 | GET  | /jsrc | _200_ |  | 6  ms | 127.0.0.1 | localhost | http://localhost:3000/jsrc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:49:15 | GET  | /ccjl | _200_ |  | 6  ms | 127.0.0.1 | localhost | http://localhost:3000/jsrc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:49:17 | GET  | /jsrc | _200_ |  | 8  ms | 127.0.0.1 | localhost | http://localhost:3000/ccjl | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:51:06 | GET  | /jsgc | _200_ |  | 38 ms | 127.0.0.1 | localhost | http://localhost:3000/jsrc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:51:42 | GET  | /jsrc | _200_ |  | 11 ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:51:45 | GET  | /ccjl | _200_ |  | 7  ms | 127.0.0.1 | localhost | http://localhost:3000/jsrc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:51:46 | GET  | /phb | _200_ |  | 624ms | 127.0.0.1 | localhost | http://localhost:3000/ccjl | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:51:47 | GET  | /ssjt | _200_ |  | 17 ms | 127.0.0.1 | localhost | http://localhost:3000/phb | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:51:50 | GET  | /xzzx | _200_ |  | 101ms | 127.0.0.1 | localhost | http://localhost:3000/ssjt | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:51:52 | GET  | /dhwj | _200_ |  | 24 ms | 127.0.0.1 | localhost | http://localhost:3000/xzzx | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:51:55 | GET  | /ssjt | _200_ |  | 5  ms | 127.0.0.1 | localhost | http://localhost:3000/dhwj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:51:58 | GET  | /zwh | _200_ |  | 5  ms | 127.0.0.1 | localhost | http://localhost:3000/ssjt | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:52:02 | GET  | /tzgg | _200_ |  | 1230ms | 127.0.0.1 | localhost | http://localhost:3000/zwh | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:52:05 | GET  | /tzgg?page=2 | _200_ |  | 343ms | 127.0.0.1 | localhost | http://localhost:3000/tzgg | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:52:09 | GET  | /tzgg | _200_ |  | 1022ms | 127.0.0.1 | localhost | http://localhost:3000/tzgg?page=2 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:53:20 | GET  | /jsrc | _200_ |  | 10 ms | 127.0.0.1 | localhost | http://localhost:3000/tzgg | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:53:26 | GET  | /jsgc | _200_ |  | 40 ms | 127.0.0.1 | localhost | http://localhost:3000/jsrc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:53:46 | GET  |  | _200_ |  | 5492ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:54:15 | GET  | /dpdf | _404_ |  | 5  ms | 127.0.0.1 | localhost | http://localhost:3000/ | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:54:34 | GET  | /dpdf | _404_ |  | 5  ms | 127.0.0.1 | localhost | http://localhost:3000/ | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:54:37 | GET  | /phb | _200_ |  | 633ms | 127.0.0.1 | localhost | http://localhost:3000/dpdf | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:54:40 | GET  | /jsgc | _200_ |  | 45 ms | 127.0.0.1 | localhost | http://localhost:3000/phb | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:59:21 | GET  | /jsgc | _200_ |  | 43 ms | 127.0.0.1 | localhost | http://localhost:3000/phb | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:59:23 | GET  | /dxcj | _500_ |  | 4  ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:59:23 | GET  | /__sinatra__/500.png | _404_ |  | 5  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+22:59:43 | GET  | /dxcj | _200_ |  | 49 ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:07:12 | GET  | /dxcj/248 | _500_ |  | 0  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:07:12 | GET  | /__sinatra__/500.png | _404_ |  | 8  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:09:04 | GET  | /dxcj/248 | _200_ |  | 4  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:10:35 | GET  | /dxcj/248 | _200_ |  | 195ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:10:53 | GET  | /dxcj/248 | _200_ |  | 36 ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:17:00 | GET  | /dxcj/248 | _500_ |  | 27 ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:17:00 | GET  | /__sinatra__/500.png | _404_ |  | 7  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:17:09 | GET  | /dxcj/248 | _500_ |  | 58 ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:17:09 | GET  | /__sinatra__/500.png | _404_ |  | 7  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:17:43 | GET  | /dxcj/248 | _200_ |  | 321ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:18:32 | GET  | /ccjl | _200_ |  | 4  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:22:59 | GET  | /ccjl | _200_ |  | 9  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:23:01 | GET  | /dxcj | _500_ |  | 31 ms | 127.0.0.1 | localhost | http://localhost:3000/ccjl | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:23:01 | GET  | /__sinatra__/500.png | _404_ |  | 5  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:23:05 | GET  | /dxcj | _500_ |  | 35 ms | 127.0.0.1 | localhost | http://localhost:3000/ccjl | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:23:05 | GET  | /__sinatra__/500.png | _404_ |  | 3  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:23:24 | GET  | /dxcj | _500_ |  | 41 ms | 127.0.0.1 | localhost | http://localhost:3000/ccjl | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:23:24 | GET  | /__sinatra__/500.png | _404_ |  | 5  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:24:09 | GET  | /dxcj | _500_ |  | 81 ms | 127.0.0.1 | localhost | http://localhost:3000/ccjl | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:24:09 | GET  | /__sinatra__/500.png | _404_ |  | 5  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:24:40 | GET  | /dxcj | _500_ |  | 35 ms | 127.0.0.1 | localhost | http://localhost:3000/ccjl | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:24:40 | GET  | /__sinatra__/500.png | _404_ |  | 3  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:25:07 | GET  | /dxcj | _500_ |  | 31 ms | 127.0.0.1 | localhost | http://localhost:3000/ccjl | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:25:07 | GET  | /__sinatra__/500.png | _404_ |  | 2  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:25:54 | GET  | /dxcj | _500_ |  | 33 ms | 127.0.0.1 | localhost | http://localhost:3000/ccjl | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:25:54 | GET  | /__sinatra__/500.png | _404_ |  | 2  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:26:18 | GET  | /dxcj | _500_ |  | 44 ms | 127.0.0.1 | localhost | http://localhost:3000/ccjl | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:26:18 | GET  | /__sinatra__/500.png | _404_ |  | 4  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:26:20 | GET  | /dxcj | _500_ |  | 47 ms | 127.0.0.1 | localhost | http://localhost:3000/ccjl | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:26:20 | GET  | /__sinatra__/500.png | _404_ |  | 4  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:26:41 | GET  | /dxcj | _500_ |  | 38 ms | 127.0.0.1 | localhost | http://localhost:3000/ccjl | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:26:41 | GET  | /__sinatra__/500.png | _404_ |  | 2  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:27:23 | GET  | /dxcj | _500_ |  | 34 ms | 127.0.0.1 | localhost | http://localhost:3000/ccjl | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:27:23 | GET  | /__sinatra__/500.png | _404_ |  | 2  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:27:24 | GET  | /dxcj | _500_ |  | 44 ms | 127.0.0.1 | localhost | http://localhost:3000/ccjl | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:27:24 | GET  | /__sinatra__/500.png | _404_ |  | 29 ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:27:25 | GET  | /dxcj | _500_ |  | 36 ms | 127.0.0.1 | localhost | http://localhost:3000/ccjl | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:27:25 | GET  | /__sinatra__/500.png | _404_ |  | 5  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:27:25 | GET  | /dxcj | _500_ |  | 33 ms | 127.0.0.1 | localhost | http://localhost:3000/ccjl | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:27:25 | GET  | /__sinatra__/500.png | _404_ |  | 13 ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:31:13 | GET  |  | _200_ |  | 5672ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:31:14 | GET  | /favicon.ico | _404_ |  | 4  ms | 127.0.0.1 | localhost |  | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:31:15 | GET  | /dxcj | _200_ |  | 67 ms | 127.0.0.1 | localhost | http://localhost:3000/ | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:31:17 | GET  | /jsgc | _200_ |  | 80 ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:31:18 | GET  | /jsrc | _200_ |  | 22 ms | 127.0.0.1 | localhost | http://localhost:3000/jsgc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:31:21 | GET  | /dxcj | _200_ |  | 48 ms | 127.0.0.1 | localhost | http://localhost:3000/jsrc | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:31:22 | GET  | /dxcj/248 | _200_ |  | 44 ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:31:42 | GET  | /dxcj | _200_ |  | 40 ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:31:44 | GET  | /dxcj/248 | _200_ |  | 37 ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:32:17 | GET  | /dxcj/248 | _200_ |  | 164ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:33:23 | GET  | /dxcj/248 | _200_ |  | 33 ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:36:01 | GET  | /dxcj/248 | _500_ |  | 29 ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:36:01 | GET  | /__sinatra__/500.png | _404_ |  | 3  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:36:06 | GET  | /dxcj/248 | _500_ |  | 138ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:36:06 | GET  | /__sinatra__/500.png | _404_ |  | 3  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:36:27 | GET  | /dxcj/248 | _200_ |  | 130ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:37:13 | GET  | /dxcj/248 | _200_ |  | 135ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:43:01 | GET  | /dxcj/248 | _200_ |  | 131ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:43:03 | GET  | /dxcj/score/9498 | _500_ |  | 1  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:43:04 | GET  | /__sinatra__/500.png | _404_ |  | 3  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/score/9498 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:43:56 | GET  | /dxcj/score/9498 | _500_ |  | 6  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:43:56 | GET  | /__sinatra__/500.png | _404_ |  | 5  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/score/9498 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:44:46 | GET  | /dxcj/score/9498 | _500_ |  | 40 ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:44:46 | GET  | /__sinatra__/500.png | _404_ |  | 4  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/score/9498 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:46:20 | GET  | /dxcj/score/9498 | _404_ |  | 22 ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:46:30 | GET  | /dxcj/score/9498 | _404_ |  | 20 ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:47:07 | GET  | /dxcj/248 | _200_ |  | 142ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:47:10 | GET  | /dxcj/248/9498 | _200_ |  | 33 ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:47:23 | GET  | /dxcj/248/9498 | _200_ |  | 35 ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:47:37 | GET  | /dxcj/248/9498 | _500_ |  | 27 ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:47:37 | GET  | /__sinatra__/500.png | _404_ |  | 3  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248/9498 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:47:43 | GET  | /dxcj/248/9498 | _200_ |  | 128ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:48:03 | GET  | /dxcj/248/9498 | _200_ |  | 76 ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:52:51 | GET  | /dxcj/248/9498 | _500_ |  | 70 ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:52:51 | GET  | /__sinatra__/500.png | _404_ |  | 5  ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248/9498 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:53:20 | GET  | /dxcj/248/9498 | _200_ |  | 79 ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:53:27 | GET  | /dxcj/248/9498 | _200_ |  | 84 ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:53:39 | GET  | /dxcj/248/9498 | _200_ |  | 246ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+23:53:47 | GET  | /dxcj/248/9498 | _200_ |  | 369ms | 127.0.0.1 | localhost | http://localhost:3000/dxcj/248 | Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36

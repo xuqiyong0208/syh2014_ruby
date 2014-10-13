@@ -31,4 +31,8 @@ class StaticRoute < Sinarey::Application
     halt_public_folder
   end
 
+  get '/dahuiwenjian/*' do
+    halt_public_folder
+  end
+
 end

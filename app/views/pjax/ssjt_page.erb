@@ -2,14 +2,12 @@
 	<div class="box">
     	<div class="m_title">
         	<h2>当前位置：服务/赛事交通</h2>
-            <!-- <div class="search"><input type="text" value="搜索关键字" /><button>搜索</button></div> -->
         </div>
         <div class="m_body">
         	<div class="competition">
             	<div class="competition_title">
                 	<div class="selectBox">
-                    	<select name="">
-                    	  <option>选择项目</option>
+                    	<select name="" onchange="javascript:change_map_point(this);">
                     	  <option>乒乓球</option>
                     	  <option>排球</option>
                     	  <option>篮球</option>
@@ -17,10 +15,40 @@
                     	</select>
                     </div>
                 </div>
-                <div class="competition_con">
-                	<div class="map">百度地图</div>
+                <style type="text/css">
+                    .map {height:100%;width:100%;}
+                </style>
+                <div class="competition_con" style="height: 450px; width: 800px; margin: 0 auto 10px;position:relative;" >
+                	<div class="map" id="allmap"></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=336cccb3b91d4875b026406d07f1edd8"></script>
+<script type="text/javascript">
+    // 百度地图API功能
+    window.map = new BMap.Map("allmap");    // 创建Map实例
+    map.setCurrentCity("上海");          // 设置地图显示的城市 此项是必须设置的
+    map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+    map.centerAndZoom(new BMap.Point(121.448484,31.187888), 18);  // 初始化地图,设置中心点坐标和地图级别
+    map.enableScrollWheelZoom(true);
+    var set_map_point = function(x,y){
+       window.map.centerAndZoom(new BMap.Point(x,y), 18);
+    }
+
+    var change_map_point = function(ele){
+        var $this = $(ele);
+        if($this.val()=="乒乓球"){
+            set_map_point(121.448484,31.187888);
+        }else if($this.val()=="排球"){
+            set_map_point(121.506303,31.245608);
+        }else if($this.val()=="篮球"){
+            set_map_point(121.217649,31.057474);
+        }else if($this.val()=="足球"){
+            set_map_point(121.4431,31.032027);
+        }
+    }
+
+</script>
