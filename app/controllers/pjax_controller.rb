@@ -86,7 +86,7 @@ class PjaxController < ApplicationController
 
     files = files[(@page-1)*@per_page,@per_page]
     files.each do |filename|
-      atime = File.atime(dir+filename).strftime("%Y-%m-%d")
+      atime = File.atime(File.join(dir,filename)).strftime("%Y-%m-%d")
       @list << {filename: filename, atime:atime}
     end
 
@@ -109,7 +109,7 @@ class PjaxController < ApplicationController
 
     files = files[(@page-1)*@per_page,@per_page]
     files.each do |filename|
-      atime = File.atime(dir+filename).strftime("%Y-%m-%d")
+      atime = File.atime(File.join(dir,filename)).strftime("%Y-%m-%d")
       @list << {filename: filename, atime:atime}
     end
 
