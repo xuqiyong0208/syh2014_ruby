@@ -6,8 +6,15 @@
         <div class="m_body">
         	<div class="article_list">
             	<ul>
-                    <% @list.each do |hsh| %>
-                	<li><a href="/download/<%= URI.escape(hsh[:filename]) %>"><%~ hsh[:filename] %></a><span><%~ hsh[:atime] %></span></li>
+                    <% if @list.present? %>
+                        <% @list.each do |hsh| %>
+                        <li>
+                            <a href="/dahuiwenjian/<%= URI.escape(hsh[:filename]) %>"><%~ hsh[:filename] %></a>
+                            <span><%~ hsh[:atime] %></span>
+                        </li>
+                        <% end %>
+                    <% elsif @page==1 %>
+                        <h3 style="text-align:center;">暂时没有可供下载的文件</h3>
                     <% end %>
                 </ul>
             </div>

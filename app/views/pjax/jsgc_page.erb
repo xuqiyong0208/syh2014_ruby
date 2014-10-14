@@ -8,7 +8,8 @@
             	<div class="rule_list">
                 	<ul>
                         <% @projects.each do |project| %>
-                        <li><a href="/jsgc/<%~ project[:dhkey] %>"><img src="<%= static_url "/images/rule_#{project[:dhkey]}.png" %>" alt="" /><p><%~ project[:xmmc].to_s.strip %></p></a></li>
+                        <% xmmc = project[:xmmc].to_s.strip %>
+                        <li><a href="/files/jsgc/<%~ URI.escape(xmmc) %>.doc"><img src="<%= static_url "/images/rule_#{project[:dhkey]}.png" %>" alt="" /><p><%~ xmmc %></p></a></li>
                         <% end %>
                     </ul>
                 </div>

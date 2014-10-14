@@ -38,8 +38,8 @@ def get_currnet_week_schedule(week,max=nil)
   sql_parts = []
   week.each do |hsh|
     next unless hsh[:valid]
-    #.where(ydhleixing:'S')  ##市运会要限制S
-    sql_parts << "select * from lzj_sportsdata where yuefen = #{hsh[:month]} and rihao = #{hsh[:day]} and dhkey is not null"
+    #  ##市运会要限制S.where()
+    sql_parts << "select * from lzj_sportsdata where ydhleixing = 'S' and yuefen = #{hsh[:month]} and rihao = #{hsh[:day]} and dhkey is not null"
   end
   sql = sql_parts.join(' union all ')
   week_schedule = DB.fetch(sql)

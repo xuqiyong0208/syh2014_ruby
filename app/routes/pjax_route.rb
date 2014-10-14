@@ -5,6 +5,8 @@ class PjaxRoute < PjaxController
 
   route :get, '/' do dispatch(:index_page) end    #首页
 
+  route :get, '/api/get_qing_data_json' do dispatch(:qing_data_json) end #青训新闻 ajax
+
   route :get, '/dhwj' do dispatch(:dhwj_page) end   #大会文件
 
   route :get, '/ssjt' do dispatch(:ssjt_page) end   #赛事交通

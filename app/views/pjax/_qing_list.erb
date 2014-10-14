@@ -1,0 +1,4 @@
+<% news ||= [] %>
+<% news.each do |data| %>
+<li><a href="/ssxw/<%~ data[:href] %>"><%~ data[:content] %></a></li>
+<% end %>

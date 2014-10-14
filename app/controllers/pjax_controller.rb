@@ -51,11 +51,18 @@ class PjaxController < ApplicationController
 
     #p @week_schedule
 
-    @qing_gonggao = fetch_qing_gonggao
-
-    @qing_news = fetch_qing_news
-
     halt_page(:index_page)
+  end
+
+  #qing_data
+  def qing_data_json
+    qing_gonggao = fetch_qing_gonggao
+    gonggao_html = render_to_string(partial: :_qing_list, locals: {news: qing_gonggao})
+
+    qing_news = fetch_qing_news
+    news_html = render_to_string(partial: :_qing_list, locals: {news: qing_news})
+
+    halt_json({gonggao_html: gonggao_html, news_html: news_html})
   end
 
   #赛事交通
@@ -67,9 +74,12 @@ class PjaxController < ApplicationController
   #大会文件
   def dhwj_page
     @list = []
-    dir = "#{Sinarey.root}/public/dahuiwenjian/"
-    files = Dir.new(dir).to_a.sort[2..-1]
-
+    dir = Settings.upload_root
+    if File.directory?(dir)
+      files = Dir.new(dir).to_a.sort[2..-1]
+    else
+      files = []
+    end
     @count = files.size
     @page = (tmp = params[:page].to_i) > 0 ? tmp : 1
     @per_page = 50
@@ -87,9 +97,12 @@ class PjaxController < ApplicationController
   def xzzx_page 
 
     @list = []
-    dir = "#{Sinarey.root}/public/download/"
-    files = Dir.new(dir).to_a.sort[2..-1]
-
+    dir = Settings.upload_root
+    if File.directory?(dir)
+      files = Dir.new(dir).to_a.sort[2..-1]
+    else
+      files = []
+    end
     @count = files.size
     @page = (tmp = params[:page].to_i) > 0 ? tmp : 1
     @per_page = 50

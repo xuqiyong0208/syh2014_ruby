@@ -10,7 +10,7 @@ class StaticRoute < Sinarey::Application
 
   def halt_public_folder
     path = "#{Sinarey.root}/public#{unescape(request.path_info)}"
-    halt 404,'文件不存在' unless File.file?(path)
+    halt 404,'文件不存在或者已删除' unless File.file?(path)
     env['sinatra.static_file'] = path
     send_file path, :disposition => nil
   end
@@ -27,12 +27,22 @@ class StaticRoute < Sinarey::Application
     redirect_to_old_website
   end
 
-  get '/download/*' do
+  get '/files/*' do
     halt_public_folder
   end
 
-  get '/dahuiwenjian/*' do
-    halt_public_folder
+  get '/download/:filename' do
+    path = "#{Settings.upload_root}/#{params[:filename].to_s}"
+    halt 404,'文件不存在或者已删除' unless File.file?(path)
+    env['sinatra.static_file'] = path
+    send_file path, :disposition => nil
+  end
+
+  get '/dahuiwenjian/:filename' do
+    path = "#{Settings.upload_root}/#{params[:filename].to_s}"
+    halt 404,'文件不存在或者已删除' unless File.file?(path)
+    env['sinatra.static_file'] = path
+    send_file path, :disposition => nil
   end
 
 end
