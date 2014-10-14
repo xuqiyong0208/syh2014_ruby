@@ -1,0 +1,18 @@
+<div class="main clear">
+	<div class="box">
+    	<div class="m_title">
+        	<h2>当前位置：赛事/单项成绩</h2>
+        </div>
+        <div class="m_body">
+        	<div class="competition">
+            	<div class="rule_list">
+                	<ul>
+                        <% @projects.each do |project| %>
+                        <li><a href="/dxcj/<%~ project[:dhkey] %>"><img src="<%= static_url "/images/rule_#{project[:dhkey]}.png" %>" alt="" /><p><%~ project[:xmmc].to_s.strip %></p></a></li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

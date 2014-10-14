@@ -11,9 +11,15 @@ class PjaxRoute < PjaxController
 
   route :get, '/xzzx' do dispatch(:xzzx_page) end   #下载中心
 
+  route :get, '/dxcj' do dispatch(:dxcj_page) end   #单项成绩-选择项目
+
+  route :get, '/dxcj/:id' do dispatch(:dxcj_detail_page) end   #单项成绩-比赛列表
+
+  route :get, '/dxcj/:id/:imkey' do dispatch(:dxcj_score_page) end   #单场比赛详细结果
+
   route :get, '/ccjl' do dispatch(:ccjl_page) end   #超创记录
 
-  route :get, '/dpdf' do dispatch(:dpdf_page) end   #带牌带分
+  route :get, '/phb' do dispatch(:phb_page) end   #排行榜
 
   route :get, '/jsgc' do dispatch(:jsgc_page) end   #竞赛规程
 

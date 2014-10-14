@@ -13,7 +13,6 @@ require File.expand_path('../config/application',  __FILE__)
 # end
 
 
-
 require 'date'
 
 #从星期一开始
@@ -81,12 +80,36 @@ end
 #   puts schedule.inspect
 # end
 
-project_schedule = WebProjectSchedule.where(dhkey: 289).limit(10)
+# project_schedule = WebProjectSchedule.where(dhkey: 289).limit(10)
 
-project_schedule.each do |schedule|
-  puts schedule.inspect
+# project_schedule.each do |schedule|
+#   puts schedule.inspect
+# end
+
+#总分 十项系列赛
+# scores = DB.fetch("select * from dbo.系列赛总分榜 order by zdf - koufen DESC, zdf DESC, df01 DESC, df02 DESC, df03 DESC, df04 DESC")
+
+# scores.each do |score|
+#   puts "#{score[:dwjc].to_s.strip} #{score[:zdf] - score[:koufen]}"
+# end
+
+#奖牌 十项系列赛
+jiangpais = DB.fetch("select * from dbo.系列赛总分榜 order by zjp + zyp + ztp DESC, zjp DESC, zyp DESC, ztp DESC")
+
+jiangpais.each do |jiangpai|
+  puts jiangpai.inspect
+  #puts "#{jiangpai[:dwjc].to_s.strip} #{jiangpai[:zjp] + jiangpai[:zyp] + jiangpai[:ztp]}"
 end
 
+puts "\n"
+
+#奖牌 市运会
+jiangpais = DB.fetch("select * from dbo.市运会奖牌 order by zjp + zyp + ztp DESC, zjp desc, zyp desc, ztp desc")
+
+jiangpais.each do |jiangpai|
+  puts jiangpai.inspect
+  #puts "#{jiangpai[:dwjc].to_s.strip} #{jiangpai[:zjp] + jiangpai[:zyp] + jiangpai[:ztp]}"
+end
 
 
 

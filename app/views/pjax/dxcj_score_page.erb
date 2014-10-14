@@ -1,0 +1,41 @@
+<div class="main clear">
+	<div class="box">
+    	<div class="m_title">
+        	<h2>当前位置：赛事/单项成绩/<%~ @project[:xmmc].to_s.strip %></h2>
+        </div>
+        <div class="m_body">
+          <div class="competition">
+            
+            <div class="competition_con">
+              <table width="100%" border="0" cellspacing="5" cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td colspan="7">比赛项目:<%~ @game[:itmc] %></td>
+                  </tr>
+                  <tr>
+                    <td>单位名称</td>
+                    <td>运动员姓名或队名</td>
+                    <td>名次</td>
+                    <td>成绩</td>
+                    <td>得分</td>
+                    <td>积分</td>
+                    <td>备注</td>
+                  </tr>
+                  <% @records.each do |record| %>
+                  <tr>
+                    <td><%~ record[:dwmc].to_s.strip %></td>
+                    <td><%~ record[:tzmc].to_s.strip %></td>
+                    <td><%~ record[:mingci].to_f > 0 ? record[:mingci] : " " %></td>
+                    <td><%~ record[:sjcj].to_f > 0 ? record[:sjcj] : " "  %></td>
+                    <td><%~ record[:defen].to_f > 0 ? record[:defen] : " "  %></td>
+                    <td><%~ record[:jifen].to_f > 0 ? record[:jifen] : " "  %></td>
+                    <td><%~ record[:beizhu].to_s.strip %></td>
+                  </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

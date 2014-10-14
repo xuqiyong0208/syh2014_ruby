@@ -24,12 +24,12 @@
       <div class="notice_body">
         <ul class="notice_b1">
           <% @tongzhi.each do |tongzhi| %>
-          <li><a href="javascript:;"><%~ tongzhi.ctitle %></a></li>
+          <li><a href="/tzgg/<%~ tongzhi.nid_news %>"><%~ tongzhi.ctitle %></a></li>
           <% end %>
         </ul>
         <ul class="notice_b2" style="display: none">
           <% @news.each do |news| %>
-          <li><a href="javascript:;"><%~ news.ctitle %></a></li>
+          <li><a href="/ssxw/<%~ news.nid_news %>"><%~ news.ctitle %></a></li>
           <% end %>
         </ul>
         <ul class="notice_b3" style="display: none">
@@ -46,13 +46,13 @@
     </div>
   </div>
   <div class="box rankingList">
-    <div class="b_title"><h1>奖牌榜</h1><a href="#">更多...</a></div>
+    <div class="b_title"><h1>奖牌榜</h1><a href="/phb">更多...</a></div>
     <div class="adolescent">
       <h2>青少年组</h2>
       <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableList">
         <thead>
           <tr>
-            <th>名词</th>
+            <th>名次</th>
             <th>单位</th>
             <th>团体奖牌</th>
             <th>团体积分</th>
@@ -60,38 +60,16 @@
             <th>重点项目积分</th>
           </tr>
         </thead>
+        <% @jiangpais.each_with_index do |jiangpai, index| %>
         <tr>
-          <td>1.</td>
-          <td>徐汇</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>6</td>
-        </tr>
-        <tr>
-          <td>2.</td>
-          <td>宝山</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
+          <td><%= index+1 %>.</td>
+          <td><%~ jiangpai[:dwjc].to_s.strip %></td>
+          <td><%~ (jiangpai[:zjp] + jiangpai[:zyp] + jiangpai[:ztp]).to_i %></td>
+          <td><%~ jiangpai[:zdf] - jiangpai[:koufen] %></td>
           <td>&nbsp;</td>
           <td>&nbsp;</td>
         </tr>
-        <tr>
-          <td>3.</td>
-          <td>黄浦</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td>4.</td>
-          <td>普陀</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-        </tr>
+        <% end %>
       </table>
     </div>
     <div class="colleges">
@@ -103,106 +81,49 @@
             <th>团体积分</th>
           </tr>
         </thead>
+        <% @jiangpais2.each do |jiangpai| %>
         <tr>
-          <td>1</td>
-          <td>2</td>
+          <td><%~ (jiangpai[:zjp] + jiangpai[:zyp] + jiangpai[:ztp]).to_i %></td>
+          <td><%~ jiangpai[:zdf] %></td>
         </tr>
-        <tr>
-          <td>2</td>
-          <td>3</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>4</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>5</td>
-        </tr>
+        <% end %>
       </table>
     </div>
   </div>
   
+  <% if @week_schedule.size > 0 %>
   <div class="box schedule">
     <div class="b_title"><h1>竞赛日程</h1><a href="#">更多...</a></div>
     <table width="100%" border="0" cellspacing="5" cellpadding="0">
       <thead>
         <tr>
           <th>全部赛程</th>
-          <th><em class="orange_font">星期日</em><span>31日</span></th>
-          <th><em>星期一</em><span>1日</span></th>
-          <th><em>星期二</em><span>2日</span></th>
-          <th><em>星期三</em><span>3日</span></th>
-          <th><em>星期四</em><span>4日</span></th>
-          <th><em>星期五</em><span>5日</span></th>
-          <th><em class="orange_font">星期六</em><span>6日</span></th>
+          <% week_dictionary = {1=>"一",2=>"二",3=>"三",4=>"四",5=>"五",6=>"六",7=>"日"} %>
+          <% @week.each_with_index do |data,i| %>
+          <% j = i + 1 %>
+          <th><em class="<%~ "orange_font" if j >= 6 %>">星期<%= week_dictionary[j] %></em><span><%~ data[:day] %>日</span></th>
+          <% end %>
         </tr>
       </thead>
       <tbody>
+        <% @week_schedule.each do |schedule| %>
         <tr>
-          <td>开幕式</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
+          <td><%~ schedule[:name] %></td>
+          <% @week.each_with_index do |data| %>
+          <% hsh = schedule[:data][data[:day]] %>
+            <% if hsh %>
+            <td><%~ hsh[:jpshu] %></td>
+            <% else %>
+            <td>&nbsp;</td>
+            <% end %>
+          <% end %>
         </tr>
-        <tr>
-          <td>田径</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td>游泳</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td>武术</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td>铅球</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td>铁饼</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-        </tr>
+        <% end %>
       </tbody>
     </table>
   </div>
-  
+  <% end %>
+
   <div class="box moment">
     <div class="b_title">
       <h1>精彩瞬间</h1>
@@ -223,13 +144,13 @@
     <div class="b_title"><h1>市运题外话</h1></div>
     <div class="theme_con">
       <ul>
-        <li><a href="#">省运会三项赛事落幕 济宁队斩获6 ...</a></li>
-        <li><a href="#">23届省运会气象服务网站开通第三届省老运会30日开幕</a></li>
-        <li><a href="#">省运会小记者走进体操比赛现场采访小运动员省运会击剑决赛落幕</a></li>
-        <li><a href="#">“武术套路”比赛在梁山举行</a></li>
-        <li><a href="#">23届省运会体操比赛在任城区开赛确保省老年人运动会万无一失</a></li>
-        <li><a href="#">激扬青春—赛事志愿者实录太白湖新区倾情助力省运会</a></li>
-        <li><a href="#">齐心协力办盛会——兖州区精心筹备掠影</a></li>
+        <li><a href="javascript:;">省运会三项赛事落幕 济宁队斩获6 ...</a></li>
+        <li><a href="javascript:;">23届省运会气象服务网站开通第三届省老运会30日开幕</a></li>
+        <li><a href="javascript:;">省运会小记者走进体操比赛现场采访小运动员省运会击剑决赛落幕</a></li>
+        <li><a href="javascript:;">“武术套路”比赛在梁山举行</a></li>
+        <li><a href="javascript:;">23届省运会体操比赛在任城区开赛确保省老年人运动会万无一失</a></li>
+        <li><a href="javascript:;">激扬青春—赛事志愿者实录太白湖新区倾情助力省运会</a></li>
+        <li><a href="javascript:;">齐心协力办盛会——兖州区精心筹备掠影</a></li>
       </ul>
     </div>
     
@@ -239,12 +160,12 @@
     <div class="b_title"><h1>友情连接</h1></div>
     <div class="links_con">
       <ul>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
+        <li><a href="javascript:;"></a></li>
+        <li><a href="javascript:;"></a></li>
+        <li><a href="javascript:;"></a></li>
+        <li><a href="javascript:;"></a></li>
+        <li><a href="javascript:;"></a></li>
+        <li><a href="javascript:;"></a></li>
       </ul>
     </div>
   </div>
