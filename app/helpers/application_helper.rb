@@ -82,6 +82,10 @@ end
     CGI.unescape(str).force_encoding('GB2312').encode!('UTF-8').gsub("\\\"","\"").gsub("\\'","'")
   end
 
+  def oj_dump(hash)
+    Oj.dump(hash, mode: :compat)
+  end
+
   def params_page
     @temp[:params_page] ||= (
       if params[:page].present?
@@ -90,6 +94,14 @@ end
         1
       end
     )
+  end
+
+  require 'sanitize'
+
+  def simple_format(string)
+    return '' if string.empty?
+    string = string.gsub("\n\r","<br />").gsub("\r", "").gsub("\n", "<br />")
+    Sanitize.clean(string, :elements => ['a','br','img'], :attributes => {'a' => ['href','target'], 'img' => ['src','alt']})
   end
 
   #设置分页的默认值

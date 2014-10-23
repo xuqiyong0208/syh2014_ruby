@@ -7,11 +7,10 @@
         	<div class="competition">
             	<div class="competition_title">
                 	<div class="selectBox">
-                    	<select name="" onchange="javascript:change_map_point(this);">
-                    	  <option>乒乓球</option>
-                    	  <option>排球</option>
-                    	  <option>篮球</option>
-                    	  <option>足球</option>
+                    	<select name="" id="select_dom" onchange="javascript:change_map_point(this);">
+                            <% @data.each_key do |name| %>
+                        	  <option><%~ name %></option>
+                            <% end %>
                     	</select>
                     </div>
                 </div>
@@ -28,27 +27,45 @@
 
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=336cccb3b91d4875b026406d07f1edd8"></script>
 <script type="text/javascript">
+
+    (function(){
+
+    var global_data = <%= oj_dump(@data) %>;
+
     // 百度地图API功能
-    window.map = new BMap.Map("allmap");    // 创建Map实例
+    var map = new BMap.Map("allmap");    // 创建Map实例
     map.setCurrentCity("上海");          // 设置地图显示的城市 此项是必须设置的
     map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
-    map.centerAndZoom(new BMap.Point(121.448484,31.187888), 18);  // 初始化地图,设置中心点坐标和地图级别
     map.enableScrollWheelZoom(true);
-    var set_map_point = function(x,y){
-       window.map.centerAndZoom(new BMap.Point(x,y), 18);
+
+    var set_map_point = function(x,y,desc){
+       var new_point = new BMap.Point(x,y);
+       var marker = new BMap.Marker(new_point);  // 创建标注
+       map.addOverlay(marker);              // 将标注添加到地图中
+       marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+       var label = new BMap.Label(desc,{offset:new BMap.Size(20,-5)});
+       marker.setLabel(label);
     }
 
-    var change_map_point = function(ele){
-        var $this = $(ele);
-        if($this.val()=="乒乓球"){
-            set_map_point(121.448484,31.187888);
-        }else if($this.val()=="排球"){
-            set_map_point(121.506303,31.245608);
-        }else if($this.val()=="篮球"){
-            set_map_point(121.217649,31.057474);
-        }else if($this.val()=="足球"){
-            set_map_point(121.4431,31.032027);
-        }
+    window.change_map_point = function(ele){
+        map.clearOverlays();
+        var $this = $(ele),
+            name = $this.val(),
+            info = global_data[''+name];
+
+            if(info){
+
+                var point = new BMap.Point(info[0][1][0],info[0][1][1]);
+                map.centerAndZoom(point, 13);
+
+                for (var i=0; i<info.length; i++){
+                    set_map_point(info[i][1][0],info[i][1][1],info[i][0]);
+                }
+            }
     }
+
+    change_map_point($('#select_dom'));
+
+    }).call();
 
 </script>

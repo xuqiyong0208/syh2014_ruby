@@ -32,14 +32,14 @@ class StaticRoute < Sinarey::Application
   end
 
   get '/download/:filename' do
-    path = "#{Settings.upload_root}/#{params[:filename].to_s}"
+    path = "#{Sinarey.root}/public/download/#{params[:filename].to_s}"
     halt 404,'文件不存在或者已删除' unless File.file?(path)
     env['sinatra.static_file'] = path
     send_file path, :disposition => nil
   end
 
   get '/dahuiwenjian/:filename' do
-    path = "#{Settings.upload_root}/#{params[:filename].to_s}"
+    path = "#{Sinarey.root}/public/dahuiwenjian/#{params[:filename].to_s}"
     halt 404,'文件不存在或者已删除' unless File.file?(path)
     env['sinatra.static_file'] = path
     send_file path, :disposition => nil

@@ -8,7 +8,7 @@ class ApplicationController < Sinarey::Application
   before do
     @temp = {}
     @temp[:request_time] = Time.now
-    @opening_time = (Time.new(2014,11,11,20,0,0) - Time.now).to_i
+    @opening_time = (Time.new(2014,11,12,0,0,0) - Time.now).to_i
   end
 
   after do
@@ -80,7 +80,7 @@ class ApplicationController < Sinarey::Application
 
   def halt_json(json)
     content_type :json
-    page = Oj.dump(json, mode: :compat)
+    page = oj_dump(json)
 
     halt page
   end

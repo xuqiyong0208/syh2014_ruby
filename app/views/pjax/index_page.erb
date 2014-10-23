@@ -87,7 +87,7 @@
   
   <% if @week_schedule.size > 0 %>
   <div class="box schedule">
-    <div class="b_title"><h1>竞赛日程</h1><a href="#">更多...</a></div>
+    <div class="b_title"><h1>竞赛日程</h1><a href="javascript:;">更多...</a></div>
     <table width="100%" border="0" cellspacing="5" cellpadding="0">
       <thead>
         <tr>
@@ -121,7 +121,7 @@
   <div class="box moment">
     <div class="b_title">
       <h1>精彩瞬间</h1>
-      <!-- <a href="#">更多...</a> -->
+      <!-- <a href="javascript:;">更多...</a> -->
     </div>
     <div class="moment_con">
       <ul>
@@ -153,16 +153,77 @@
   <div class="box links">
     <div class="b_title"><h1>友情链接</h1></div>
     <div class="links_con">
-      <ul>
-        <li><a href="javascript:;"></a></li>
-        <li><a href="javascript:;"></a></li>
-        <li><a href="javascript:;"></a></li>
-        <li><a href="javascript:;"></a></li>
-        <li><a href="javascript:;"></a></li>
-        <li><a href="javascript:;"></a></li>
-      </ul>
+      <div class="links_img">
+        <ul>
+          <li>
+            <a href="http://www.shsports.gov.cn" target="_blank"><img src="<%= static_url "/images/link01.jpg" %>" /></a>
+            <a href="http://www.shec.edu.cn" target="_blank"><img src="<%= static_url "/images/link02.jpg" %>" /></a>
+            <a href="http://shqx.shsports.gov.cn/WebSite/html/QX/portal/index/index.htm" target="_blank"><img src="<%= static_url "/images/link03.jpg" %>" /></a>
+            <a href="http://www.secsa.cn" target="_blank"><img src="<%= static_url "/images/link04.jpg" %>" /></a>
+            <a href="http://www.hkty.gov.cn " target="_blank"><img src="<%= static_url "/images/link05.jpg" %>" /></a>
+          </li>
+          <li>
+            <a href="http://tyj.jingan.gov.cn/jaty/jatyweb/index.aspx" target="_blank"><img src="<%= static_url "/images/link06.jpg" %>" /></a>
+            <a href="http://www.pdsports.gov.cn/website/html/pdsports/portal/index/index.htm" target="_blank"><img src="<%= static_url "/images/link07.jpg" %>" /></a>
+            <a href="http://www.jssport.gov.cn/html" target="_blank"><img src="<%= static_url "/images/link08.jpg" %>" /></a>
+            <a href="http://tyj.songjiang.gov.cn/Web/Default.aspx" target="_blank"><img src="<%= static_url "/images/link09.jpg" %>" /></a>
+          </li>
+        </ul>
+      </div>
+      <div class="links_text">
+        <a href="http://shhpty.com" target="_blank">黄浦区体育局</a>
+        <a href="http://www.hkty.gov.cn" target="_blank">虹口区体育局</a>
+        <a href="http://ypty.shyp.gov.cn" target="_blank">杨浦区体育局</a>
+        <a href="http://zbty.shzb.gov.cn/sportcms" target="_blank">闸北区体育局</a>
+        <a href="http://www.shptty.com" target="_blank">普陀区体育局</a>
+        <a href="http://tyj.changning.sh.cn" target="_blank">长宁区体育局</a>
+        <a href="http://tyj.jingan.gov.cn/jaty/jatyweb/index.aspx" target="_blank">静安区体育局</a>
+        <a href="http://tyj.xh.sh.cn/tyjweb/HTML/DefaultSite/portal/index/index.htm" target="_blank">徐汇区体育局</a>
+        <a href="http://www.pdsports.gov.cn/website/html/pdsports/portal/index/index.htm" target="_blank">浦东新区体育局</a>
+        <a href="http://gzjsw.shmh.gov.cn" target="_blank">闵行区体育局</a>
+        <a href="http://www.fxty.gov.cn/fxty/default.aspx" target="_blank">奉贤区体育局</a>
+        <a href="http://www.jssport.gov.cn/html" target="_blank">金山区体育局</a>
+        <a href="http://tyj.songjiang.gov.cn/Web/Default.aspx" target="_blank">松江区体育局</a>
+        <a href="http://sport.shqp.gov.cn/gb/special/node_2090.htm" target="_blank">青浦区体育局</a>
+        <a href="http://sports.jiading.gov.cn/JdSportBureau_new/Index.aspx" target="_blank">嘉定区体育局</a>
+        <a href="http://bsty.baoshan.sh.cn" target="_blank">宝山区体育局</a>
+        <a href="http://www.shyyxh.com/index.aspx" target="_blank">上海市游泳协会</a>
+        <a href="http://shminxing0320.11467.com" target="_blank">上海市射箭协会</a>
+        <a href="javascript:;" target="_blank">上海市赛跑协会</a>
+        <a href="http://www.mxpsports.com" target="_blank">上海市羽毛球协会</a>
+        <a href="javascript:;" target="_blank">上海市棒球协会</a>
+        <a href="http://www.shslqxh.org" target="_blank">上海市篮球协会</a>
+        <a href="http://www.sh-boxing.com" target="_blank">上海市拳击协会</a>
+        <a href="javascript:;" target="_blank">上海市皮划艇协会</a>
+        <a href="http://www.shbicycle.com" target="_blank">上海市自行车协会</a>
+        <a href="http://www.shea.org.cn/news.asp?id=236&pagenumber=1&sid=9&action=content" target="_blank">上海市赛马协会</a>
+        <a href="javascript:;" target="_blank">上海市击剑协会</a>
+        <a href="http://www.sfa.com.cn/ShSportsWeb/html/shfootball/portal/index/index.htm" target="_blank">上海市足球协会</a>
+        <a href="http://www.shanghaigolf.cn" target="_blank">上海市高尔夫协会</a>
+        <a href="javascript:;" target="_blank">上海市体操协会</a>
+        <a href="javascript:;" target="_blank">上海市手球协会</a>
+        <a href="javascript:;" target="_blank">上海市曲棍球协会</a>
+        <a href="http://www.swja.sh.cn" target="_blank">上海市柔道协会</a>
+        <a href="javascript:;" target="_blank">上海市现代五项协会</a>
+        <a href="javascript:;" target="_blank">上海市赛艇协会</a>
+        <a href="http://sailboarding.sport.org.cn/bulletin/index.html" target="_blank">上海市帆船协会</a>
+        <a href="http://sailboarding.sport.org.cn/bulletin/index.html" target="_blank">上海市射击协会</a>
+        <a href="javascript:;" target="_blank">上海市垒球协会</a>
+        <a href="javascript:;" target="_blank">上海市乒乓球协会</a>
+        <a href="http://www.shtaekwondo.org.cn/welcome.do" target="_blank">上海市跆拳道协会</a>
+        <a href="http://www.shswqxh.com" target="_blank">上海市网球协会</a>
+        <a href="javascript:;" target="_blank">上海市排球协会</a>
+        <a href="javascript:;" target="_blank">上海市举重协会</a>
+        <a href="javascript:;" target="_blank">上海市国际式摔跤协会</a>
+        <a href="javascript:;" target="_blank">上海市武术套路协会</a>
+        <a href="javascript:;" target="_blank">上海市冰壶协会</a>
+        <a href="javascript:;" target="_blank">上海市花样滑冰协会</a>
+        <a href="javascript:;" target="_blank">上海市毽球协会</a>
+        <a href="javascript:;" target="_blank">上海市棋牌协会</a>
+      </div>
     </div>
   </div>
+
 </div>
 
 <script type="text/javascript">
