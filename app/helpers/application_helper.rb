@@ -96,14 +96,6 @@ end
     )
   end
 
-  require 'sanitize'
-
-  def simple_format(string)
-    return '' if string.empty?
-    string = string.gsub("\n\r","<br />").gsub("\r", "").gsub("\n", "<br />")
-    Sanitize.clean(string, :elements => ['a','br','img'], :attributes => {'a' => ['href','target'], 'img' => ['src','alt']})
-  end
-
   #设置分页的默认值
   def paginate(sequel_pagination = nil, options = {})
     options[:previous_label] ||= '上一页'
