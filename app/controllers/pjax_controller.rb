@@ -184,9 +184,9 @@ class PjaxController < ApplicationController
 
     feilds = ['dwjc','zjp','zyp','ztp']
 
-    @projects = DB.fetch("select xmmc, bh2 from dbo.bisaixiangmu where bh2 > 0 order by bh2")
+    @projects = DB.fetch("select xmmc, bh2 from dbo.bisaixiangmu where bh2 > 0 order by bh2").to_a
 
-    @jiangpais = DB.fetch("select #{feilds.join(',')} from dbo.市运会奖牌 order by zjp desc, zyp desc, ztp desc, dwjc")
+    @jiangpais = DB.fetch("select #{feilds.join(',')} from dbo.市运会奖牌 order by zjp desc, zyp desc, ztp desc, dwjc").to_a
 
     halt_page(:phb_bsjp_page)
   end
@@ -207,13 +207,20 @@ class PjaxController < ApplicationController
       xmmc,bh2 = project[:xmmc],project[:bh2]
       if xmmc && bh2
         bh2 = bh2.to_s.rjust(2,'0')
-        subfields = feilds + ["jp#{bh2}","yp#{bh2}","tp#{bh2}"]
-        jiangpais = DB.fetch("select #{subfields.join(',')} from dbo.市运会奖牌 order by zjp desc, zyp desc, ztp desc, dwjc")
-        jiangpais.each_with_index do |jiangpai,index|
-          result["p#{bh2}r#{index}"] = {zjp:jiangpai[:zjp], zyp:jiangpai[:zyp], ztp:jiangpai[:ztp]}
-        end
+        feilds += ["jp#{bh2}","yp#{bh2}","tp#{bh2}"]
       end
     end
+
+    p feilds
+
+    @data = DB.fetch("select #{feilds.join(',')} from dbo.市运会奖牌 order by zjp desc, zyp desc, ztp desc, dwjc").to_a[0]
+
+    p @data
+
+    # jiangpais.each_with_index do |jiangpai,index|
+    #   result["p#{bh2}r#{index}"] = {zjp:jiangpai[:zjp], zyp:jiangpai[:zyp], ztp:jiangpai[:ztp]}
+    # end
+
 
     halt_json(result)
   end
