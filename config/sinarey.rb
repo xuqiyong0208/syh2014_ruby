@@ -26,7 +26,7 @@ db_opts = {
   max_connections: Sinarey.dbconfig['pool']||1,
   textsize: 2147483647,
   tds_version: 8.0,
-  logger: true && Logger.new(STDOUT)
+  logger: nil && Logger.new(STDOUT)
 }
 
 DB = Sequel.connect(db_opts)

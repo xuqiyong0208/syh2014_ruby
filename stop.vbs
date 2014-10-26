@@ -18,19 +18,11 @@ If fs.fileExists(pidfile_path) Then
 		If objProcess.name = "ruby.exe" Then
 			Dim oShell : Set oShell = CreateObject("WScript.Shell")
 			oShell.Run "tskill " & pid & "", , True
+			success = true
 		End If
 	Next
-	
 end If
-
-
-'重启进程
-Dim WinScriptHost
-Set WinScriptHost = CreateObject("WScript.Shell")
-WinScriptHost.Run "bundle exec puma -t 16:16 -e production -p 3000 --pidfile " & pidfile_path & "", 0
-Set WinScriptHost = Nothing
 
 '打开浏览器访问确认
 Dim oShell2 : Set oShell2 = CreateObject("WScript.Shell")
 oShell2.run "explorer.exe http://localhost:3000",0
-
