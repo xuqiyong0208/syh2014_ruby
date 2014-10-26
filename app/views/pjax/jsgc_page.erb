@@ -5,13 +5,19 @@
         </div>
         <div class="m_body">
         	<div class="competition">
-            	<div class="rule_list">
-                	<ul>
-                        <% @projects.each do |project| %>
-                        <% xmmc = project[:xmmc].to_s.strip %>
-                        <li><a href="/files/jsgc/<%~ URI.escape(xmmc) %>.doc"><img src="<%= static_url "/images/rule_#{project[:dhkey]}.png" %>" alt="" /><p><%~ xmmc %></p></a></li>
-                        <% end %>
-                    </ul>
+                <div class="group_btn">
+                    <a href="javascript:;" class="hover"><span>青少年组</span></a>
+                    <a href="javascript:alert('暂时还没有高校组的数据');"><span>高校组</span></a>
+                </div>
+                <div class="competition_con">
+                	<div class="rule_list">
+                    	<ul>
+                            <% @projects.each do |project| %>
+                            <% xmmc = project[:xmmc].to_s.strip %>
+                            <li><a href="/files/jsgc/<%~ URI.escape(xmmc) %>.doc"><img src="<%= static_url "/images/rule_#{project[:dhkey]}.png" %>" alt="" /><p><%~ xmmc %></p></a></li>
+                            <% end %>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

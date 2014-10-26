@@ -21,7 +21,27 @@ class PjaxRoute < PjaxController
 
   route :get, '/ccjl' do dispatch(:ccjl_page) end   #超创记录
 
-  route :get, '/phb' do dispatch(:phb_page) end   #排行榜
+  route :get, '/dpdf' do dispatch(:dpdf_page) end   #带牌带分
+
+  route :get, '/phb' do dispatch(:phb_bsjp_page) end #排行榜-比赛奖牌
+
+  route :get, '/phb/bsjp' do dispatch(:phb_bsjp_page) end #排行榜-比赛奖牌  
+
+  route :get, '/phb/bsjp/sublist_json' do dispatch(:phb_bsjp_sublist_json) end #排行榜-比赛奖牌-各个项目细节
+
+  route :get, '/phb/bszf' do dispatch(:phb_bszf_page) end #排行榜-比赛总分  
+
+  route :get, '/phb/dxjp' do dispatch(:phb_dxjp_page) end #排行榜-单项奖牌  
+
+  route :get, '/phb/dxjp/:id' do dispatch(:phb_dxjp_detail_page) end #排行榜-单项奖牌-详情s
+
+  route :get, '/phb/dxzf' do dispatch(:phb_dxzf_page) end #排行榜-单项总分    
+
+  route :get, '/phb/dxzf/:id' do dispatch(:phb_dxzf_detail_page) end #排行榜-单项总分-详情
+
+  route :get, '/phb/zdxmjp' do dispatch(:phb_zdxmjp_page) end #排行榜-重点项目奖牌
+
+  route :get, '/phb/zdxmzf' do dispatch(:phb_zdxmzf_page) end #排行榜-重点项目总分  
 
   route :get, '/jsgc' do dispatch(:jsgc_page) end   #竞赛规程
 

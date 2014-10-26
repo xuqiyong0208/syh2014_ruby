@@ -59,6 +59,12 @@ class BiSaiXiangMuQingDan < Sequel::Model
   #"select dbo.比赛项目清单.*,dbo.web_uploadhtml.* from dbo.比赛项目清单 left join dbo.web_uploadhtml on dbo.比赛项目清单.imkey = dbo.web_uploadhtml.nkey where dhkey =".intval($id)." order by sex ASC, zubie ASC, itmc ASC "
 end
 
+class ShiYunHuiJP < Sequel::Model
+  set_dataset "市运会奖牌".to_sym
+
+  
+end
+
 
 
 

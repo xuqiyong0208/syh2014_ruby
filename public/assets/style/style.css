@@ -393,11 +393,10 @@ input { border: none;}
 /*----排行榜5----*/
 .cc_table_left { float: left;}
 .cc_table_right { width: 805px; float: left; overflow-x: auto;}
-.cc_table_right table { min-width: 1500px;}
 
-.cc_table_right_s { width: 605px; float: left; overflow: auto;}
+.cc_table_right_s { width: 605px; float: left; overflow-x: auto;}
 .cc_table_right_s table { width: 300px; float: left;}
-.ccs_table { min-width: 900px;}
+.ccs_table { overflow: hidden;}
 
 
 /*带牌带分*/
@@ -415,6 +414,21 @@ input { border: none;}
 .medal_box i.one {background: url(../images/medal.png) no-repeat 0px 0px;}
 .medal_box i.two {background: url(../images/medal.png) no-repeat 0px -51px;}
 .medal_box i.three {background: url(../images/medal.png) no-repeat 0px -103px;}
+
+/*--小铁人 - 小达人---*/
+.tieren, .daren {position: relative;}
+.tieren i, .daren i {
+	width: 36px; 
+	height: 27px; 
+	display: block; 
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	text-indent: -999px;
+	overflow: hidden;
+}
+.tieren i { background: url(../images/td.png) no-repeat 0px 0px;}
+.daren i { background: url(../images/td.png) no-repeat 0px bottom;}
 
 /*map*/
 .map {}

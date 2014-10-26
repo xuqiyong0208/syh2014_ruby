@@ -26,21 +26,19 @@ class PjaxController < ApplicationController
     @news = WebNews.where(nid: 26, nshenhe: 1).order(Sequel.desc(:ntop)).order_append(Sequel.desc(:nid_news)).limit(7)
 
     #奖牌榜
-    @jiangpais = DB.fetch("select TOP 4 * from dbo.系列赛总分榜 order by zjp + zyp + ztp DESC, zjp DESC, zyp DESC, ztp DESC")
+    @jiangpais = DB.fetch("select TOP 4 * from dbo.市运会单位总分 order by zjp + zyp + ztp DESC, zjp DESC, zyp DESC, ztp DESC")
 
     ttkeys = @jiangpais.map{|jiangpai| jiangpai[:ttkey] }
 
-    #p ttkeys
-
-    tmp_hsh = {}
-    tmp_list = ShiYunHuiZF.where(ttkey: ttkeys)
-    tmp_list.each do |jiangpai2|
-      tmp_hsh[jiangpai2[:ttkey]] = jiangpai2
-    end
+    # tmp_hsh = {}
+    # tmp_list = XiLieSaiZF.where(ttkey: ttkeys)
+    # tmp_list.each do |jiangpai2|
+    #   tmp_hsh[jiangpai2[:ttkey]] = jiangpai2
+    # end
 
     @jiangpais2 = []
     ttkeys.each do |ttkey|
-      @jiangpais2 << tmp_hsh[ttkey]
+      @jiangpais2 << nil #tmp_hsh[ttkey]
     end
 
     #puts @jiangpais2
@@ -174,11 +172,113 @@ class PjaxController < ApplicationController
   end
 
   #带牌带分
-  def phb_page 
+  def dpdf_page 
 
     @jiangpais = DB.fetch("select * from dbo.市运会单位总分 order by zdf desc")
 
-    halt_page(:phb_page)
+    halt_page(:dpdf_page)
+  end
+
+  #排行榜-比赛奖牌
+  def phb_bsjp_page
+
+    feilds = ['dwjc','zjp','zyp','ztp']
+
+    @projects = DB.fetch("select xmmc, bh2 from dbo.bisaixiangmu where bh2 > 0 order by bh2")
+
+    @jiangpais = DB.fetch("select #{feilds.join(',')} from dbo.市运会奖牌 order by zjp desc, zyp desc, ztp desc, dwjc")
+
+    halt_page(:phb_bsjp_page)
+  end
+
+  #排行榜-比赛奖牌-所有项目的细节 异步处理主要是为了提高页面打开的速度
+  def phb_bsjp_sublist_json
+
+    feilds = ['dwjc','zjp','zyp','ztp']
+
+    projects = []
+    db_results = DB.fetch("select xmmc, bh2 from dbo.bisaixiangmu where bh2 > 0 order by bh2")
+    db_results.each do |project|
+      projects << {xmmc: project[:xmmc].to_s.strip, bh2:project[:bh2]}
+    end
+
+    result = {}
+    projects.each do |project|
+      xmmc,bh2 = project[:xmmc],project[:bh2]
+      if xmmc && bh2
+        bh2 = bh2.to_s.rjust(2,'0')
+        subfields = feilds + ["jp#{bh2}","yp#{bh2}","tp#{bh2}"]
+        jiangpais = DB.fetch("select #{subfields.join(',')} from dbo.市运会奖牌 order by zjp desc, zyp desc, ztp desc, dwjc")
+        jiangpais.each_with_index do |jiangpai,index|
+          result["p#{bh2}r#{index}"] = {zjp:jiangpai[:zjp], zyp:jiangpai[:zyp], ztp:jiangpai[:ztp]}
+        end
+      end
+    end
+
+    halt_json(result)
+  end
+
+  #排行榜-比赛总分
+  def phb_bszf_page
+    halt_page(:phb_bszf_page)
+  end
+
+  #排行榜-单项奖牌
+  def phb_dxjp_page
+
+    @projects = WebProjectSchedule.where(zhkey: 3).all
+
+    halt_page(:phb_dxjp_page)
+  end
+
+  #排行榜-单项奖牌-详情
+  def phb_dxjp_detail_page
+
+    dhkey = params[:id].to_i
+    @project = WebProjectSchedule.where(zhkey: 3, dhkey: dhkey).first
+    halt_404 if @project.nil?
+
+    if params[:group_id]
+      halt_page(:phb_dxjp_detail_page)
+    else
+      #选择分组
+      halt_page(:phb_dxjp_group_page)
+    end
+  end
+
+  #排行榜-单项总分
+  def phb_dxzf_page
+
+    @projects = WebProjectSchedule.where(zhkey: 3).all
+
+    halt_page(:phb_dxzf_page)
+  end
+
+  #排行榜-单项总分-详情
+  def phb_dxzf_detail_page
+
+    dhkey = params[:id].to_i
+    @project = WebProjectSchedule.where(zhkey: 3, dhkey: dhkey).first
+    halt_404 if @project.nil?
+
+    if params[:group_id]
+      halt_page(:phb_dxzf_detail_page)
+    else
+      #选择分组
+      halt_page(:phb_dxzf_group_page)
+    end
+  end
+
+  #排行榜-重点项目奖牌
+  def phb_zdxmjp_page
+
+    halt_page(:phb_zdxmjp_page)
+  end
+
+  #排行榜-重点项目总分
+  def phb_zdxmzf_page
+
+    halt_page(:phb_zdxmzf_page)
   end
 
   #竞赛规程

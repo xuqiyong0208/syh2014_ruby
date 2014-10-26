@@ -71,3 +71,16 @@ function focusBlur(e){
 $(function(){
 	focusBlur('.search input');//search input默认值
 })
+
+//排行榜5  6 横向滑动条
+$(function(){
+	
+	var len5 = $(".cc_table_right table thead th").length;
+	$(".cc_table_right table").css("width",len5*100);
+	
+	var len6 = $(".ccs_table table").length;
+	$(".ccs_table").css("width",len6*300);
+})
+
+
+

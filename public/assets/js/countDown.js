@@ -1,5 +1,6 @@
-window.intDiff = window.intDiff || 0;//倒计时总秒数量
-function clock_run(){
+var intDiff = parseInt(1728000);//倒计时总秒数量
+function timer(intDiff){
+    window.setInterval(function(){
     var day=0,
         hour=0,
         minute=0,
@@ -16,18 +17,9 @@ function clock_run(){
     $('#hour_show').html('<s id="h"></s>'+hour+'时');
     $('#minute_show').html('<s></s>'+minute+'分');
     $('#second_show').html('<s></s>'+second+'秒');
-    intDiff--; 
-}
-
-function timer(intDiff){
-    clock_run();
-    window.setInterval(function(){
-        clock_run();
+    intDiff--;
     }, 1000);
 } 
 $(function(){
-    if(intDiff>0){
-        timer(intDiff);
-        $('#opening_time_clock').removeClass('hidden');
-    }
+    timer(intDiff);
 });
