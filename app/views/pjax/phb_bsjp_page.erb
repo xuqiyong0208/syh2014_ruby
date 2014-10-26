@@ -1,7 +1,7 @@
 <div class="main clear">
 	<div class="box">
     	<div class="m_title">
-        	<h2>当前位置：赛事/排行榜</h2>
+        	<h2>当前位置：赛事/排行榜/<span style="cursor:pointer;" onclick="window.location.href='/phb';">比赛奖牌</span></h2>
         </div>
         <div class="m_body">
         	  <div class="competition">
@@ -38,9 +38,9 @@
                         <% @jiangpais.each do |jiangpai| %>
                         <tr>
                           <td><%~ jiangpai[:dwjc].to_s.strip %></td>
-                          <td><%~ jiangpai[:zjp] %></td>
-                          <td><%~ jiangpai[:zyp] %></td>
-                          <td><%~ jiangpai[:ztp] %></td>
+                          <td><%~ (tmp1=jiangpai[:zjp])==(tmp2=tmp1.to_i) ? tmp2 : tmp1 %></td>
+                          <td><%~ (tmp1=jiangpai[:zyp])==(tmp2=tmp1.to_i) ? tmp2 : tmp1 %></td>
+                          <td><%~ (tmp1=jiangpai[:ztp])==(tmp2=tmp1.to_i) ? tmp2 : tmp1 %></td>
                         </tr>
                         <% end %>
                       </tbody>
@@ -71,7 +71,7 @@
                           </tbody>
                         </table>
                         <% end %>
-                        </div>
+                      </div>
                     </div>
                 </div>
 
@@ -79,3 +79,36 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+
+  function load_phb_bsjp_sublist_json() {
+    $.ajax({
+        url:'/phb/bsjp/sublist_json',
+        type:"get",
+        dataType:"json",
+        data:{},
+        success:function(json){
+          for(var key in json){
+            // alert(key);  
+            // alert(json[key]);  
+            // alert("zjp:"+json[key].zjp+" zyp:"+json[key].zyp+" ztp:"+json[key].ztp);
+            var $tr = $('#jiangpai_'+key);
+            if(json[key].zjp){
+              $tr.find('.zjp').html(''+json[key].zjp);
+            }
+            if(json[key].zyp){
+              $tr.find('.zyp').html(''+json[key].zyp);
+            }
+            if(json[key].ztp){
+              $tr.find('.ztp').html(''+json[key].ztp);
+            }
+          }
+        },
+        error:function(info){}
+    });
+  }
+
+  load_phb_bsjp_sublist_json();
+
+</script>

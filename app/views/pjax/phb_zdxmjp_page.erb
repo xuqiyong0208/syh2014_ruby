@@ -1,7 +1,7 @@
 <div class="main clear">
 	<div class="box">
-    	<div class="m_title">
-        	<h2>当前位置：赛事/排行榜</h2>
+    	  <div class="m_title">
+        	<h2>当前位置：赛事/排行榜/<span style="cursor:pointer;" onclick="window.location.href='/phb/zdxmjp';">重点项目奖牌</span></h2>
         </div>
         <div class="m_body">
         	  <div class="competition">
@@ -14,8 +14,8 @@
                 <div class="competition_a">
                   <a href="/phb" class="ca01">比赛奖牌</a>
                   <a href="/phb/bszf" class="ca02">比赛总分</a>
-                  <a href="javascript:;" class="ca01">单项奖牌</a>
-                  <a href="javascript:;" class="ca02">单项总分</a>
+                  <a href="/phb/dxjp" class="ca01">单项奖牌</a>
+                  <a href="/phb/dxzf" class="ca02">单项总分</a>
                   <a href="/phb/zdxmjp" class="hover"><i></i>重点项目奖牌</a>
                   <a href="/phb/zdxmzf"><i></i>重点项目总分</a>
                 </div>
@@ -35,51 +35,24 @@
                       </tr>
                       </thead>
                       <tbody>
+                      <% @jiangpais.each do |jiangpai| %>
                       <tr>
-                        <td>宝山</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
+                        <td><%~ jiangpai[:dwjc].to_s.strip %></td>
+                        <td><%~ (tmp1=jiangpai[:hjj])==(tmp2=tmp1.to_i) ? tmp2 : tmp1 %></td>
+                        <td><%~ (tmp1=jiangpai[:hjy])==(tmp2=tmp1.to_i) ? tmp2 : tmp1 %></td>
+                        <td><%~ (tmp1=jiangpai[:hjt])==(tmp2=tmp1.to_i) ? tmp2 : tmp1 %></td>
                       </tr>
-                      <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                      </tr>
-                      <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                      </tr>
-                      <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                      </tr>
-                      <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                      </tr>
-                      <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                      </tr>
+                      <% end %>
                       </tbody>
                     </table>
                     </div>
                     <div class="cc_table_right_s">
                       <div class="ccs_table">
+                        <% @projects.each do |project| %>
                         <table border="0" cellspacing="5" cellpadding="0">
                           <thead>
                           <tr>
-                            <th colspan="4">游泳</th>
+                            <th colspan="3"><%~ project[:tsmc].to_s.strip %></th>
                           </tr>
                           <tr>
                             <th class="medal_box">金<i class="one">金牌</i></th>
@@ -88,126 +61,16 @@
                           </tr>
                           </thead>
                           <tbody>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
+                          <% @jiangpais.each_with_index do |jiangpai,index| %>
+                          <tr id="<%~ "jiangpai_p#{project[:bh3]}r#{index}" %>">
+                            <td class="zjp">&nbsp;</td>
+                            <td class="zyp">&nbsp;</td>
+                            <td class="ztp">&nbsp;</td>
                           </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
+                          <% end %>
                           </tbody>
                         </table>
-                        <table border="0" cellspacing="5" cellpadding="0">
-                          <thead>
-                          <tr>
-                            <th colspan="4">游泳</th>
-                          </tr>
-                          <tr>
-                            <th class="medal_box">金<i class="one">金牌</i></th>
-                            <th class="medal_box">银<i class="two">银牌</i></th>
-                            <th class="medal_box">铜<i class="three">铜牌</i></th>
-                          </tr>
-                          </thead>
-                          <tbody>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          </tbody>
-                        </table>
-                        <table border="0" cellspacing="5" cellpadding="0">
-                          <thead>
-                          <tr>
-                            <th colspan="4">游泳</th>
-                          </tr>
-                          <tr>
-                            <th class="medal_box">金<i class="one">金牌</i></th>
-                            <th class="medal_box">银<i class="two">银牌</i></th>
-                            <th class="medal_box">铜<i class="three">铜牌</i></th>
-                          </tr>
-                          </thead>
-                          <tbody>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          </tbody>
-                        </table>
+                        <% end %>
                         </div>
                     </div>
                 </div>
@@ -216,3 +79,36 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+
+  function load_phb_zdxmjp_sublist_json() {
+    $.ajax({
+        url:'/phb/zdxmjp/sublist_json',
+        type:"get",
+        dataType:"json",
+        data:{},
+        success:function(json){
+          for(var key in json){
+            // alert(key);  
+            // alert(json[key]);  
+            // alert("zjp:"+json[key].zjp+" zyp:"+json[key].zyp+" ztp:"+json[key].ztp);
+            var $tr = $('#jiangpai_'+key);
+            if(json[key].zjp){
+              $tr.find('.zjp').html(''+json[key].zjp);
+            }
+            if(json[key].zyp){
+              $tr.find('.zyp').html(''+json[key].zyp);
+            }
+            if(json[key].ztp){
+              $tr.find('.ztp').html(''+json[key].ztp);
+            }
+          }
+        },
+        error:function(info){}
+    });
+  }
+
+  load_phb_zdxmjp_sublist_json();
+
+</script>

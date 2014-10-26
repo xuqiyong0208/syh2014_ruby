@@ -1,7 +1,7 @@
 <div class="main clear">
 	<div class="box">
     	<div class="m_title">
-        	<h2>当前位置：赛事/排行榜/<%~ @project[:xmmc].to_s.strip %></h2>
+        	<h2>当前位置：赛事/排行榜/<span style="cursor:pointer;" onclick="window.location.href='/phb/dxzf';">单项奖牌</span>/<span style="cursor:pointer;" onclick="window.location.href='/phb/dxzf/<%~ @project[:dhkey] %>';"><%~ @project[:xmmc].to_s.strip %></span>/<span style="cursor:pointer;" onclick="window.location.href='/phb/dxzf/<%~ @project[:dhkey] %>?zubie=<%~ URI.escape(@zubie) %>';"><%~ @zubie %></h2>
         </div>
         <div class="m_body">
         	  <div class="competition">
@@ -31,30 +31,12 @@
                           </tr>
                           </thead>
                           <tbody>
+                          <% @score.each do |score| %>
                           <tr>
-                            <td>宝山</td>
-                            <td>&nbsp;</td>
+                            <td><%~ score[:dwjc].to_s.strip %></td>
+                            <td><%~ score[:mcsum].to_i %></td>
                           </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
+                          <% end %>
                           </tbody>
                         </table>
                         </div>
@@ -74,72 +56,19 @@
                               </tr>
                               </thead>
                               <tbody>
+                              <% @score.each do |score| %>
                               <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
+                                <td><%~ (tmp=score[:mc1].to_i)>0 ? tmp : '' %></td>
+                                <td><%~ (tmp=score[:mc2].to_i)>0 ? tmp : '' %></td>
+                                <td><%~ (tmp=score[:mc3].to_i)>0 ? tmp : '' %></td>
+                                <td><%~ (tmp=score[:mc4].to_i)>0 ? tmp : '' %></td>
+                                <td><%~ (tmp=score[:mc5].to_i)>0 ? tmp : '' %></td>
+                                <td><%~ (tmp=score[:mc6].to_i)>0 ? tmp : '' %></td>
+                                <td><%~ (tmp=score[:mc7].to_i)>0 ? tmp : '' %></td>
+                                <td><%~ (tmp=score[:mc8].to_i)>0 ? tmp : '' %></td>
+                                <td><%~ (tmp=score[:mc9].to_i)>0 ? tmp : '' %></td>
                               </tr>
-                              <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                              </tr>
-                              <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                              </tr>
-                              <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                              </tr>
-                              <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                              </tr>
-                              <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                              </tr>
+                              <% end %>
                               </tbody>
                             </table>
                         </div>

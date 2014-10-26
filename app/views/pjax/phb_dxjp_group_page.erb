@@ -1,7 +1,7 @@
 <div class="main clear">
 	<div class="box">
     	<div class="m_title">
-        	<h2>当前位置：赛事/排行榜/<%~ @project[:xmmc].to_s.strip %></h2>
+        	<h2>当前位置：赛事/排行榜/<span style="cursor:pointer;" onclick="window.location.href='/phb/dxjp';">单项奖牌</span>/<span style="cursor:pointer;" onclick="window.location.href='/phb/dxjp/<%~ @project[:dhkey] %>';"><%~ @project[:xmmc].to_s.strip %></span></h2>
         </div>
         <div class="m_body">
         	  <div class="competition">
@@ -22,14 +22,11 @@
 
                 <div class="competition_con">
                   <div class="group_list">
-                      <li><a href="#" class="hover">A组</a></li>
-                        <li><a href="#">B组</a></li>
-                        <li><a href="#">C组</a></li>
-                        <li><a href="#">D组</a></li>
-                        <li><a href="#">E组</a></li>
-                        <li><a href="#">F组</a></li>
-                        <li><a href="#">汇总</a></li>
-                    </div>
+                    <% @zubies.each do |zubie| %>
+                    <li style="margin-bottom: 15px;"><a href="<%~ "/phb/dxjp/#{@project[:dhkey]}?zubie=#{URI.escape(zubie[:zubie].to_s.strip)}" %>"><%~ zubie[:zubie].to_s.strip %></a></li>
+                    <% end %>
+                    <li style="margin-bottom: 15px;"><a href="<%~ "/phb/dxjp/#{@project[:dhkey]}?zubie=#{URI.escape('汇总')}" %>">汇总</a></li>
+                  </div>
                 </div>
 
             </div>

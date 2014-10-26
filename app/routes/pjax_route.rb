@@ -31,6 +31,9 @@ class PjaxRoute < PjaxController
 
   route :get, '/phb/bszf' do dispatch(:phb_bszf_page) end #排行榜-比赛总分  
 
+  route :get, '/phb/bszf/sublist_json' do dispatch(:phb_bszf_sublist_json) end #排行榜-比赛总分-各个项目细节 
+
+  
   route :get, '/phb/dxjp' do dispatch(:phb_dxjp_page) end #排行榜-单项奖牌  
 
   route :get, '/phb/dxjp/:id' do dispatch(:phb_dxjp_detail_page) end #排行榜-单项奖牌-详情s
@@ -41,8 +44,12 @@ class PjaxRoute < PjaxController
 
   route :get, '/phb/zdxmjp' do dispatch(:phb_zdxmjp_page) end #排行榜-重点项目奖牌
 
+  route :get, '/phb/zdxmjp/sublist_json' do dispatch(:phb_zdxmjp_sublist_json) end #排行榜-重点项目奖牌-各个项目细节 
+
   route :get, '/phb/zdxmzf' do dispatch(:phb_zdxmzf_page) end #排行榜-重点项目总分  
 
+  route :get, '/phb/zdxmzf/sublist_json' do dispatch(:phb_zdxmzf_sublist_json) end #排行榜-重点项目总分-各个项目细节 
+  
   route :get, '/jsgc' do dispatch(:jsgc_page) end   #竞赛规程
 
   route :get, '/jsgc/:id' do dispatch(:jsgc_detail_page) end   #竞赛规程-详细

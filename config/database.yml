@@ -2,7 +2,7 @@ development:
   adapter: tinytds
   encoding: utf8
   database: ydh14
-  pool: 1
+  pool: 16
   username: scl
   password: scl@54325166
   host: 116.228.3.80
@@ -12,7 +12,7 @@ test:
   adapter: tinytds
   encoding: utf8
   database: ydh14
-  pool: 1
+  pool: 16
   username: scl
   password: scl@54325166
   host: 116.228.3.80
@@ -22,7 +22,7 @@ production:
   adapter: tinytds
   encoding: utf8
   database: ydh14
-  pool: 1
+  pool: 16
   username: scl
   password: scl@54325166
   host: 116.228.3.80

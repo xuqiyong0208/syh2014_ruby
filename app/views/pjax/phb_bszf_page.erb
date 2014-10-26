@@ -1,7 +1,7 @@
 <div class="main clear">
 	<div class="box">
     	<div class="m_title">
-        	<h2>当前位置：赛事/排行榜</h2>
+        	<h2>当前位置：赛事/排行榜/<span style="cursor:pointer;" onclick="window.location.href='/phb/bszf';">比赛总分</span></h2>
         </div>
         <div class="m_body">
         	  <div class="competition">
@@ -23,232 +23,44 @@
                 <div class="competition_con">
                     <div>
                       <div class="cc_table_left">
-                      <table width="300" border="0" cellspacing="5" cellpadding="0">
-                          <thead>
-                          <tr>
-                            <th>县区</th>
-                            <th>总分</th>
-                          </tr>
-                          </thead>
-                          <tbody>
-                          <tr>
-                            <td>宝山</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          </tbody>
-                        </table>
+                        <table width="300" border="0" cellspacing="5" cellpadding="0">
+                            <thead>
+                              <tr>
+                                <th>县区</th>
+                                <th>总分</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <% @jiangpais.each do |jiangpai| %>
+                              <tr>
+                                <td><%~ jiangpai[:dwjc].to_s.strip %></td>
+                                <td><%~ jiangpai[:zdf] %></td>
+                              </tr>
+                              <% end %>
+                            </tbody>
+                          </table>
                         </div>
+
                         <div class="cc_table_right">
-                            <table width="100%" border="0" cellspacing="5" cellpadding="0">
-                              <thead>
+                          <table width="100%" border="0" cellspacing="5" cellpadding="0">
+                            <thead>
                               <tr>
-                                <th>射箭</th>
-                                <th>田径</th>
-                                <th>游泳</th>
-                                <th>跳水</th>
-                                <th>射箭</th>
-                                <th>田径</th>
-                                <th>游泳</th>
-                                <th>跳水</th>
-                                <th>射箭</th>
-                                <th>田径</th>
-                                <th>游泳</th>
-                                <th>跳水</th>
-                                <th>射箭</th>
-                                <th>田径</th>
-                                <th>游泳</th>
-                                <th>跳水</th>
-                                <th>射箭</th>
-                                <th>田径</th>
-                                <th>游泳</th>
-                                <th>跳水</th>
-                                <th>射箭</th>
-                                <th>田径</th>
-                                <th>游泳</th>
-                                <th>跳水</th>
+                                <% @projects.each do |project| %>
+                                <th><%~ project[:xmmc].to_s.strip %></th>
+                                <% end %>
                               </tr>
-                              </thead>
-                              <tbody>
+                            </thead>
+                            <tbody>
+                              <% @jiangpais.each_with_index do |jiangpai,index| %>
                               <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
+                                <% @projects.each do |project| %>
+                                <td id="<%~ "zf_p#{project[:bh2]}r#{index}" %>">&nbsp;</td>
+                                <% end %>
                               </tr>
-                              <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                              </tr>
-                              <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                              </tr>
-                              <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                              </tr>
-                              <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                              </tr>
-                              <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                              </tr>
-                              </tbody>
-                            </table>
+                              <% end %>
+                            </tbody>
+                          </table>
                         </div>
-                        
                     </div>
                 </div>
 
@@ -256,3 +68,29 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+
+  function load_phb_bszf_sublist_json() {
+    $.ajax({
+        url:'/phb/bszf/sublist_json',
+        type:"get",
+        dataType:"json",
+        data:{},
+        success:function(json){
+          for(var key in json){
+            // alert(key);  
+            // alert(json[key]);  
+            // alert("zdf:"+json[key].zdf);
+            if(json[key].zdf){
+              $('#zf_'+key).html(''+json[key].zdf);
+            }
+          }
+        },
+        error:function(info){}
+    });
+  }
+
+  load_phb_bszf_sublist_json();
+
+</script>

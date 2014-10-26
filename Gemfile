@@ -11,6 +11,8 @@ gem 'i18n'
 
 gem 'thin'
 
+gem 'puma'
+
 gem 'sinarey', '1.0.4'
 gem 'sinatra-contrib'
 
