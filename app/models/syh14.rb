@@ -51,7 +51,11 @@ class ShiYunHuiZF < Sequel::Model
   #"select * from dbo.市运会单位总分 order by zdf desc"
 
 end
-  
+
+class ShiYunHuiJP < Sequel::Model
+  set_dataset "市运会奖牌".to_sym
+end
+
 class BiSaiXiangMuQingDan < Sequel::Model
   set_dataset "比赛项目清单".to_sym
 
@@ -59,10 +63,14 @@ class BiSaiXiangMuQingDan < Sequel::Model
   #"select dbo.比赛项目清单.*,dbo.web_uploadhtml.* from dbo.比赛项目清单 left join dbo.web_uploadhtml on dbo.比赛项目清单.imkey = dbo.web_uploadhtml.nkey where dhkey =".intval($id)." order by sex ASC, zubie ASC, itmc ASC "
 end
 
-class ShiYunHuiJP < Sequel::Model
-  set_dataset "市运会奖牌".to_sym
 
-  
+class ShiTeShuJP < Sequel::Model
+  set_dataset "市特殊奖牌".to_sym
+end
+
+
+class ShiTeShuDF < Sequel::Model
+  set_dataset "市特殊得分".to_sym
 end
 
 

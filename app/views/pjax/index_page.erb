@@ -48,20 +48,20 @@
           <tr>
             <th>名次</th>
             <th>单位</th>
-            <th>团体奖牌</th>
-            <th>团体积分</th>
-            <th>重点项目奖牌</th>
-            <th>重点项目积分</th>
+            <th style="cursor:pointer;" onclick="load_jiangpaibang('jp1');">团体奖牌</th>
+            <th style="cursor:pointer;" onclick="load_jiangpaibang('df1');">团体积分</th>
+            <th style="cursor:pointer;" onclick="load_jiangpaibang('jp2');">重点项目奖牌</th>
+            <th style="cursor:pointer;" onclick="load_jiangpaibang('df2');">重点项目积分</th>
           </tr>
         </thead>
-        <% @jiangpais.each_with_index do |jiangpai, index| %>
+        <% 4.times.each do |index| %>
         <tr>
-          <td><%= index+1 %>.</td>
-          <td><%~ jiangpai[:dwjc].to_s.strip %></td>
-          <td><%~ (jiangpai[:zjp] + jiangpai[:zyp] + jiangpai[:ztp]).to_i %></td>
-          <td><%~ jiangpai[:zdf].round(1) %></td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
+          <td><%~ index+1 %>.</td>
+          <td id="<%~ "dwjc_#{index}" %>"></td>
+          <td id="<%~ "jp1_#{index}" %>"></td>
+          <td id="<%~ "df1_#{index}" %>"></td>
+          <td id="<%~ "jp2_#{index}" %>"></td>
+          <td id="<%~ "df2_#{index}" %>"></td>
         </tr>
         <% end %>
       </table>
@@ -71,14 +71,14 @@
       <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableList">
         <thead>
           <tr>
-            <th>团体奖牌</th>
-            <th>团体积分</th>
+            <th style="cursor:pointer;" onclick="load_jiangpaibang('jp3');">团体奖牌</th>
+            <th style="cursor:pointer;" onclick="load_jiangpaibang('df3');">团体积分</th>
           </tr>
         </thead>
-        <% @jiangpais2.each do |jiangpai| %>
+        <% 4.times.each do |index| %>
         <tr>
-          <td><%#~ (jiangpai[:zjp] + jiangpai[:zyp] + jiangpai[:ztp]).to_i %></td>
-          <td><%#~ (jiangpai[:zdf] - jiangpai[:koufen]).round(1) %></td>
+          <td id="<%~ "jp3_#{index}" %>"></td>
+          <td id="<%~ "df3_#{index}" %>"></td>
         </tr>
         <% end %>
       </table>
@@ -137,14 +137,7 @@
     <div class="weather"><iframe allowtransparency="true" frameborder="0" width="140" height="203" scrolling="no" src="http://tianqi.2345.com/plugin/widget/index.htm?s=2&z=1&t=1&v=1&d=2&bd=0&k=000000&f=&q=1&e=1&a=1&c=58362&w=140&h=203&align=left"></iframe></div>
     <div class="b_title"><h1>市运题外话</h1></div>
     <div class="theme_con">
-      <ul>
-        <li><a href="javascript:;">省运会三项赛事落幕 济宁队斩获6 ...</a></li>
-        <li><a href="javascript:;">23届省运会气象服务网站开通第三届省老运会30日开幕</a></li>
-        <li><a href="javascript:;">省运会小记者走进体操比赛现场采访小运动员省运会击剑决赛落幕</a></li>
-        <li><a href="javascript:;">“武术套路”比赛在梁山举行</a></li>
-        <li><a href="javascript:;">23届省运会体操比赛在任城区开赛确保省老年人运动会万无一失</a></li>
-        <li><a href="javascript:;">激扬青春—赛事志愿者实录太白湖新区倾情助力省运会</a></li>
-        <li><a href="javascript:;">齐心协力办盛会——兖州区精心筹备掠影</a></li>
+      <ul id="tiwaihua_box">
       </ul>
     </div>
     
@@ -227,6 +220,74 @@
 </div>
 
 <script type="text/javascript">
+
+  window.jiangpaibang = <%= oj_dump(@jiangpaibang) %>;
+
+  function SortByJP1(a, b){
+    var y = a.jp1;
+    var x = b.jp1;
+    return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+  }
+
+  function SortByJP2(a, b){
+    var y = a.jp2;
+    var x = b.jp2;
+    return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+  }
+
+  function SortByJP3(a, b){
+    var y = a.jp3;
+    var x = b.jp3;
+    return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+  }
+
+  function SortByDF1(a, b){
+    var y = a.df1;
+    var x = b.df1;
+    return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+  }
+
+  function SortByDF2(a, b){
+    var y = a.df2;
+    var x = b.df2;
+    return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+  }
+
+  function SortByDF3(a, b){
+    var y = a.df3;
+    var x = b.df3;
+    return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+  }
+
+  function load_jiangpaibang(column){
+    var list;
+    if(column=="jp1"){
+      list = window.jiangpaibang.sort(SortByJP1);
+    }else if(column=="jp2"){
+      list = window.jiangpaibang.sort(SortByJP2);
+    }else if(column=="jp3"){
+      list = window.jiangpaibang.sort(SortByJP3);
+    }else if(column=="df1"){
+      list = window.jiangpaibang.sort(SortByDF1);
+    }else if(column=="df2"){
+      list = window.jiangpaibang.sort(SortByDF2);
+    }else if(column=="df3"){
+      list = window.jiangpaibang.sort(SortByDF3);
+    }
+    list = list.slice(0,4);
+    for (var i=0;i<list.length;i++)
+    {
+      var data = list[i];
+      $('#dwjc_'+i).text(data.dwjc);
+      $('#jp1_'+i).text(data.jp1);
+      $('#jp2_'+i).text(data.jp2);
+      $('#jp3_'+i).text(data.jp3);
+      $('#df1_'+i).text(data.df1);
+      $('#df2_'+i).text(data.df2);
+      $('#df3_'+i).text(data.df3);
+    }
+  }
+
   function load_qing_news() {
     $.ajax({
         url:'/api/get_qing_data_json',
@@ -236,10 +297,13 @@
         success:function(json){
           $('#qing_gonggao_box').html(json.gonggao_html);
           $('#qing_news_box').html(json.news_html);
+          $('#tiwaihua_box').html(json.tiwaihua_html);
         },
         error:function(info){}
     });
   }
+
+  load_jiangpaibang('jp1');
 
   load_qing_news();
 </script>

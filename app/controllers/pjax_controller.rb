@@ -26,22 +26,40 @@ class PjaxController < ApplicationController
     @news = WebNews.where(nid: 26, nshenhe: 1).order(Sequel.desc(:ntop)).order_append(Sequel.desc(:nid_news)).limit(7)
 
     #奖牌榜
-    @jiangpais = DB.fetch("select TOP 4 * from dbo.市运会单位总分 order by zjp + zyp + ztp DESC, zjp DESC, zyp DESC, ztp DESC").to_a
+    jp_hash = {}
 
-    ttkeys = @jiangpais.map{|jiangpai| jiangpai[:ttkey] }
+    jiangpais = DB.fetch("select * from dbo.市运会单位总分 order by zjp + zyp + ztp DESC, zjp DESC, zyp DESC, ztp DESC").to_a
 
-    # tmp_hsh = {}
-    # tmp_list = XiLieSaiZF.where(ttkey: ttkeys)
-    # tmp_list.each do |jiangpai2|
-    #   tmp_hsh[jiangpai2[:ttkey]] = jiangpai2
-    # end
-
-    @jiangpais2 = []
-    ttkeys.each do |ttkey|
-      @jiangpais2 << nil #tmp_hsh[ttkey]
+    jiangpais.each do |p|
+      jp_hash[p[:ttkey]] = {dwjc: p[:dwjc].to_s.strip, jp1: p[:zjp] + p[:zyp] + p[:ztp], df1: p[:zdf]}
     end
 
-    #puts @jiangpais2
+    ttkeys = jiangpais.map{|p| p[:ttkey] }
+
+    jp_list = ShiTeShuJP.where(ttkey: ttkeys).all
+    jp_list.each do |p|
+      jp_hash[p[:ttkey]][:jp2] = p[:hjj] + p[:hjy] + p[:hjt]
+    end
+
+    zf_list = ShiTeShuDF.where(ttkey: ttkeys).all
+    zf_list.each do |p|
+      jp_hash[p[:ttkey]][:df2] = p[:hjf]
+    end
+
+    @jiangpaibang = jp_hash.values
+
+    #puts @jiangpaibang
+
+
+    #拼出所有比分的hash，为之后排序使用
+    
+    #@jiangpais = DB.fetch("select * from dbo.市运会单位总分 order by zjp + zyp + ztp DESC, zjp DESC, zyp DESC, ztp DESC").to_a
+
+
+    # @sts_zf = []
+    # ttkeys.each do |ttkey|
+    #   @sts_zf << nil #tmp_hsh[ttkey]
+    # end
 
     #竞赛日程 本周
     @week = get_current_week
@@ -60,7 +78,10 @@ class PjaxController < ApplicationController
     qing_news = fetch_qing_news
     news_html = render_to_string(partial: :_qing_list, locals: {news: qing_news})
 
-    halt_json({gonggao_html: gonggao_html, news_html: news_html})
+    tiwaihua = fetch_tiwaihua
+    tiwaihua_html = render_to_string(partial: :_qing_list, locals: {news: tiwaihua})
+
+    halt_json({gonggao_html: gonggao_html, news_html: news_html, tiwaihua_html: tiwaihua_html})
   end
 
   #赛事交通
@@ -123,7 +144,7 @@ class PjaxController < ApplicationController
   #大会文件
   def dhwj_page
     @list = []
-    dir = begin Settings.upload_root rescue '' end
+    dir = "#{Sinarey.root}/public/dahuiwenjian"
     if File.directory?(dir)
       files = Dir.new(dir).to_a.sort[2..-1]
     else
@@ -515,7 +536,24 @@ class PjaxController < ApplicationController
   end
 
   #组委会
-  def zwh_page 
+  def zwh_page
+
+    @list = []
+    dir = "#{Sinarey.root}/public/zuweihuiwenjian"
+    if File.directory?(dir)
+      files = Dir.new(dir).to_a.sort[2..-1]
+    else
+      files = []
+    end
+    @count = files.size
+    @page = (tmp = params[:page].to_i) > 0 ? tmp : 1
+    @per_page = 50
+
+    files = files[(@page-1)*@per_page,@per_page]
+    files.each do |filename|
+      atime = File.atime(File.join(dir,filename)).strftime("%Y-%m-%d")
+      @list << {filename: filename, atime:atime}
+    end
 
     halt_page(:zwh_page)
   end

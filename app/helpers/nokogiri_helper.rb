@@ -41,6 +41,28 @@ module NokogiriHelper
     arr
   end
 
+  #获取市运题外话
+  def fetch_tiwaihua
+    base_path = "http://syh.shsports.gov.cn/ShSportsWeb/html/shsports/"
+    url = base_path + "15syh_mtgz/List/list_0.htm"
+
+    content = open(url).read.force_encoding('utf-8')
+
+    doc = Nokogiri::HTML(content)
+
+    links = doc.css('body .center_box .c_left .list_right_box ul li a')
+
+    arr = []
+    links.each_with_index do |dom, i|
+      break if i >= 7
+      href =  base_path + dom.attributes['href'].to_s[6..-1]
+      content = dom.content.to_s
+      arr << {href: href, content: content}
+    end
+
+    arr
+  end
+
   #数据库里的编码无法识别，直接从旧网站抓取
   def fetch_news_content(nid)
     url = "http://116.228.3.80/newsdetail/?nid=#{nid}"
