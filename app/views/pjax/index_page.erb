@@ -221,7 +221,7 @@
 
 <script type="text/javascript">
 
-  window.jiangpaibang = <%= oj_dump(@jiangpaibang) %>;
+  window.jiangpaibang = <%= oj_dump(@jiangpaibang).gsub('</','<\/') %>;
 
   function SortByJP1(a, b){
     var y = a.jp1;

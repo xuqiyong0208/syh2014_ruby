@@ -30,7 +30,7 @@
 
     (function(){
 
-    var global_data = <%= oj_dump(@data) %>;
+    var global_data = <%= oj_dump(@data).gsub('</','<\/') %>;
 
     // 百度地图API功能
     var map = new BMap.Map("allmap");    // 创建Map实例
