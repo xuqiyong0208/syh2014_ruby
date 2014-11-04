@@ -14,8 +14,9 @@
                     	<ul>
                             <% @projects.each do |project| %>
                             <% xmmc = project[:xmmc].to_s.strip %>
-                            <li><a href="/files/jsgc/<%~ URI.escape(xmmc) %>.pdf"><img src="<%= static_url "/images/rule_#{project[:dhkey]}.png" %>" alt="" /><p><%~ xmmc %></p></a></li>
+                            <li><a target="_blank" href="/files/jsgc/<%~ URI.escape(xmmc) %>.pdf"><img src="<%= static_url "/images/rule_#{project[:dhkey]}.png" %>" alt="" /><p><%~ xmmc %></p></a></li>
                             <% end %>
+                            <li><a target="_blank" href="/files/jsgc/<%~ URI.escape("单项竞赛规程补充通知") %>.pdf"><img src="<%= static_url "/images/rule_buchongtongzhi.png" %>" alt="" /><p>补充通知</p></a></li>
                         </ul>
                     </div>
                 </div>

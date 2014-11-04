@@ -8,7 +8,13 @@ module NokogiriHelper
   def fetch_qing_gonggao
     base_path = "http://shqx.shsports.gov.cn/WebSite/html/QX/"
     url = base_path + "qx_shhxsydh/List/list_0.htm"
-    doc = Nokogiri::HTML(open(url))
+    
+    options = {
+      "User-Agent" => "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)",
+      "Referer" => "http://syh.shsports.gov.cn/"
+    }
+    content = open(url,options).read.force_encoding('utf-8')
+    doc = Nokogiri::HTML(content)
 
     links = doc.css('body .left .left_box .list_box ul li a')
 
@@ -20,13 +26,21 @@ module NokogiriHelper
       arr << {href: href, content: content}
     end
 
-    arr
+    return arr
+  rescue Exception => boom
+    return []
   end
 
   def fetch_qing_news
     base_path = "http://shqx.shsports.gov.cn/WebSite/html/QX/"
     url = base_path + "qx_shhxsydhgg/List/list_0.htm"
-    doc = Nokogiri::HTML(open(url))
+
+    options = {
+      "User-Agent" => "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)",
+      "Referer" => "http://syh.shsports.gov.cn/"
+    }
+    content = open(url,options).read.force_encoding('utf-8')
+    doc = Nokogiri::HTML(content)
 
     links = doc.css('body .left .left_box .list_box ul li a')
 
@@ -38,7 +52,9 @@ module NokogiriHelper
       arr << {href: href, content: content}
     end
 
-    arr
+    return arr
+  rescue Exception => boom
+    return []
   end
 
   #获取市运题外话
@@ -46,7 +62,11 @@ module NokogiriHelper
     base_path = "http://syh.shsports.gov.cn/ShSportsWeb/html/shsports/"
     url = base_path + "15syh_mtgz/List/list_0.htm"
 
-    content = open(url).read.force_encoding('utf-8')
+    options = {
+      "User-Agent" => "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)",
+      "Referer" => "http://syh.shsports.gov.cn/"
+    }
+    content = open(url,options).read.force_encoding('utf-8')
 
     doc = Nokogiri::HTML(content)
 
@@ -60,7 +80,9 @@ module NokogiriHelper
       arr << {href: href, content: content}
     end
 
-    arr
+    return arr
+  rescue Exception => boom
+    return []
   end
 
   #数据库里的编码无法识别，直接从旧网站抓取

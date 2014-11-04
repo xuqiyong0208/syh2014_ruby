@@ -31,7 +31,7 @@ class PjaxController < ApplicationController
     jiangpais = DB.fetch("select * from dbo.市运会单位总分 order by zjp + zyp + ztp DESC, zjp DESC, zyp DESC, ztp DESC").to_a
 
     jiangpais.each do |p|
-      jp_hash[p[:ttkey]] = {dwjc: p[:dwjc].to_s.strip, jp1: p[:zjp] + p[:zyp] + p[:ztp], df1: p[:zdf]}
+      jp_hash[p[:ttkey]] = {dwjc: p[:dwjc].to_s.strip, jp1: p[:zjp] + p[:zyp] + p[:ztp], jpj1: p[:zjp].to_i, jpy1: p[:zyp].to_i, jpt1: p[:ztp].to_i, df1: p[:zdf]}
     end
 
     ttkeys = jiangpais.map{|p| p[:ttkey] }
@@ -62,8 +62,9 @@ class PjaxController < ApplicationController
     # end
 
     #竞赛日程 本周
-    @week = get_current_week
-    @week_schedule = get_currnet_week_schedule(@week, 6)
+    #@week = get_current_week
+    #@week_schedule = get_currnet_week_schedule(@week, 6)
+    @week_schedule = []
 
     #p @week_schedule
 

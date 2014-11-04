@@ -10,7 +10,7 @@
                     <% if @list.present? %>
                         <% @list.each do |hsh| %>
                         <li>
-                            <a href="/zuweihuiwenjian/<%= URI.escape(hsh[:filename]) %>"><%~ hsh[:filename] %></a>
+                            <a target="_blank" href="/zuweihuiwenjian/<%= URI.escape(hsh[:filename]) %>"><%~ hsh[:filename] %></a>
                             <span><%~ hsh[:atime] %></span>
                         </li>
                         <% end %>
