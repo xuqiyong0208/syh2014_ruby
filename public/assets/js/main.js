@@ -76,10 +76,10 @@ $(function(){
 $(function(){
 	
 	var len5 = $(".cc_table_right table thead th").length;
-	$(".cc_table_right table").css("width",len5*100);
+	$(".cc_table_right table").css("width",len5*50);
 	
 	var len6 = $(".ccs_table table").length;
-	$(".ccs_table").css("width",len6*300);
+	$(".ccs_table").css("width",len6*170);
 })
 
 

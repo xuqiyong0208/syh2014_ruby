@@ -325,7 +325,7 @@ input { border: none;}
 	border: 1px #CCCCCC solid; 
 	width: 150px;
 }
-.competition_con { padding: 10px 0px;}
+.competition_con { padding: 10px 0px; overflow: hidden;}
 .competition_con table thead th { 
 	background: #b0da0e; 
 	height: 40px; 
@@ -341,6 +341,7 @@ input { border: none;}
 	font-size: 16px; 
 	text-align: center;
 }
+
 /*竞赛规则*/
 .rule_list { overflow: hidden;}
 
@@ -426,28 +427,28 @@ input { border: none;}
 
 /*----排行榜5----*/
 .cc_table_left { float: left;}
-.cc_table_right { width: 805px; float: left; overflow-x: auto;}
+.cc_table_right { width: 905px; float: left; overflow-x: auto;}
 
-.cc_table_right_s { width: 605px; float: left; overflow-x: auto;}
-.cc_table_right_s table { width: 300px; float: left;}
+.cc_table_right_s { width: 830px; float: left; overflow-x: auto;}
+.cc_table_right_s table { width: 170px; float: left;}
 .ccs_table { overflow: hidden;}
 
 
 /*带牌带分*/
 .medal_box { position: relative;}
 .medal_box i { 
-	width: 31px; 
-	height: 51px; 
+	width: 15px; 
+	height: 25px; 
 	display: block; 
 	position: absolute;
 	top: 0px;
-	right: 10px;
+	right: 2px;
 	text-indent: -999px;
 	overflow: hidden;
 }
-.medal_box i.one {background: url(../images/medal.png) no-repeat 0px 0px;}
-.medal_box i.two {background: url(../images/medal.png) no-repeat 0px -51px;}
-.medal_box i.three {background: url(../images/medal.png) no-repeat 0px -103px;}
+.medal_box i.one {background: url(../images/td_j.png) no-repeat; background-size: 15px 25px;}
+.medal_box i.two {background: url(../images/td_y.png) no-repeat; background-size: 15px 25px;}
+.medal_box i.three {background: url(../images/td_t.png) no-repeat; background-size: 15px 25px;}
 
 /*--小铁人 - 小达人---*/
 .tieren, .daren {position: relative;}

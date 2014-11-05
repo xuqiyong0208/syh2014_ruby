@@ -13,7 +13,8 @@ module NokogiriHelper
       "User-Agent" => "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)",
       "Referer" => "http://syh.shsports.gov.cn/"
     }
-    content = open(url,options).read.force_encoding('utf-8')
+    content = open(url,options).read
+
     doc = Nokogiri::HTML(content)
 
     links = doc.css('body .left .left_box .list_box ul li a')
@@ -39,7 +40,8 @@ module NokogiriHelper
       "User-Agent" => "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)",
       "Referer" => "http://syh.shsports.gov.cn/"
     }
-    content = open(url,options).read.force_encoding('utf-8')
+    content = open(url,options).read
+
     doc = Nokogiri::HTML(content)
 
     links = doc.css('body .left .left_box .list_box ul li a')
@@ -66,7 +68,7 @@ module NokogiriHelper
       "User-Agent" => "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)",
       "Referer" => "http://syh.shsports.gov.cn/"
     }
-    content = open(url,options).read.force_encoding('utf-8')
+    content = open(url,options).read.force_encoding('UTF-8')
 
     doc = Nokogiri::HTML(content)
 
