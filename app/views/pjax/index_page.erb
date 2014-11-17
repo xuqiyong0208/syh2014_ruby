@@ -43,60 +43,68 @@
   <div class="box rankingList">
     <div class="b_title"><h1>奖牌榜</h1><a href="/phb">更多...</a></div>
       <div class="adolescent">
-        <h2>青少年组</h2>
+        <h2><i></i>青少年组</h2>
+          <ul class="adco">
+            <li><a href="javascript:;" class="qingshaonianzu_tab hover" onclick="load_jiangpaibang('jp1',this);">奖牌榜</a></li>
+            <li><a href="javascript:;" class="qingshaonianzu_tab" onclick="load_jiangpaibang('df1',this);">总分榜</a></li>
+            <li><a href="javascript:;" class="qingshaonianzu_tab" onclick="load_jiangpaibang('jp2',this);">重点奖牌榜</a></li>
+            <li><a href="javascript:;" class="qingshaonianzu_tab" onclick="load_jiangpaibang('df2',this);">重点总分榜</a></li>
+          </ul>
           <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableList">
             <thead>
               <tr>
-                <th>名次</th>
-                <th>单位</th>
-                <th><a href="javascript:;" onclick="load_jiangpaibang('jp1');">团体奖牌</a></th>
-                <th><a href="javascript:;" onclick="load_jiangpaibang('df1');">团体积分</a></th>
-                <th><a href="javascript:;" onclick="load_jiangpaibang('jp2');">重点项目奖牌</a></th>
-                <th><a href="javascript:;" onclick="load_jiangpaibang('df2');">重点项目积分</a></th>
+              <th>区域</th>
+              <th>奖牌</th>
+              <th><span class="td_j">金牌</span></th>
+              <th><span class="td_y">银牌</span></th>
+              <th><span class="td_t">铜牌</span></th>
+              <th>总分</th>
+              <th>排名</th>
               </tr>
             </thead>
-            <tbody>
-            <% 8.times.each do |index| %>
+            <% 10.times.each do |index| %>
             <tr>
-              <td><%~ index+1 %>.</td>
               <td id="<%~ "dwjc_#{index}" %>"></td>
-              <td>
-                <span class="td_j" id="<%~ "jpj1_#{index}" %>"></span>
-                <span class="td_y" id="<%~ "jpy1_#{index}" %>"></span>
-                <span class="td_t" id="<%~ "jpt1_#{index}" %>"></span>
-              </td>
-              <td id="<%~ "df1_#{index}" %>"></td>
-              <td id="<%~ "jp2_#{index}" %>"></td>
-              <td id="<%~ "df2_#{index}" %>"></td>
+              <td id="<%~ "jp_#{index}" %>"></td>
+              <td id="<%~ "jpj_#{index}" %>"></td>
+              <td id="<%~ "jpy_#{index}" %>"></td>
+              <td id="<%~ "jpt_#{index}" %>"></td>
+              <td id="<%~ "df_#{index}" %>"></td>
+              <td><%~ index+1 %></td>
             </tr>
             <% end %>
-          </tbody>
-        </table>
+          </table>
       </div>
       <div class="colleges">
-        <h2>高校组</h2>
+        <h2><i></i>高校组</h2>
+          <ul class="adco">
+              <li><a href="javascript:;">重点奖牌榜</a></li>
+              <li><a href="javascript:;">重点总分榜</a></li>
+          </ul>
           <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableList">
             <thead>
-            <tr>
-              <th>团体奖牌</th>
-              <th>团体积分</th>
-            </tr>
-            </thead>
-            <tbody>
-              <% 8.times.each do |index| %>
               <tr>
-                <td>
-                  <!-- 
-                  <span class="td_j" id="<%~ "jpj3_#{index}" %>"></span>
-                  <span class="td_y" id="<%~ "jpy3_#{index}" %>"></span>
-                  <span class="td_t" id="<%~ "jpt3_#{index}" %>"></span>
-                  -->           
-                </td>
-                <td id="<%~ "df3_#{index}" %>"></td>
+              <th>区域</th>
+              <th>奖牌</th>
+              <th><span class="td_j">金牌</span></th>
+              <th><span class="td_y">银牌</span></th>
+              <th><span class="td_t">铜牌</span></th>
+              <th>总分</th>
+              <th>排名</th>
               </tr>
-              <% end %>
-          </tbody>
-        </table>
+            </thead>
+            <% 10.times.each do |index| %>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <% end %>
+          </table>
       </div>
   </div>
   
@@ -299,12 +307,6 @@
     return ((x < y) ? -1 : ((x > y) ? 1 : 0));
   }
 
-  function SortByJP3(a, b){
-    var y = a.jp3;
-    var x = b.jp3;
-    return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-  }
-
   function SortByDF1(a, b){
     var y = a.df1;
     var x = b.df1;
@@ -317,40 +319,44 @@
     return ((x < y) ? -1 : ((x > y) ? 1 : 0));
   }
 
-  function SortByDF3(a, b){
-    var y = a.df3;
-    var x = b.df3;
-    return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-  }
-
-  function load_jiangpaibang(column){
-    var list;
+  function load_jiangpaibang(column,ele){
+    var list,
+        type;
     if(column=="jp1"){
       list = window.jiangpaibang.sort(SortByJP1);
+      type = 1;
     }else if(column=="jp2"){
       list = window.jiangpaibang.sort(SortByJP2);
-    }else if(column=="jp3"){
-      list = window.jiangpaibang.sort(SortByJP3);
+      type = 2;
     }else if(column=="df1"){
       list = window.jiangpaibang.sort(SortByDF1);
+      type = 1;
     }else if(column=="df2"){
       list = window.jiangpaibang.sort(SortByDF2);
-    }else if(column=="df3"){
-      list = window.jiangpaibang.sort(SortByDF3);
+      type = 2;
     }
-    list = list.slice(0,8);
+    list = list.slice(0,10);
     for (var i=0;i<list.length;i++)
     {
       var data = list[i];
       $('#dwjc_'+i).text(data.dwjc);
-      $('#jpj1_'+i).text(data.jpj1);
-      $('#jpy1_'+i).text(data.jpy1);
-      $('#jpt1_'+i).text(data.jpt1);
-      $('#jp2_'+i).text(data.jp2);
-      $('#jp3_'+i).text(data.jp3);
-      $('#df1_'+i).text(data.df1);
-      $('#df2_'+i).text(data.df2);
-      $('#df3_'+i).text(data.df3);
+      if(type==1){
+        $('#jp_'+i).text(data.jp1);
+        $('#jpj_'+i).text(data.jpj1);
+        $('#jpy_'+i).text(data.jpy1);
+        $('#jpt_'+i).text(data.jpt1);
+        $('#df_'+i).text(data.df1);
+      }else if(type==2){
+        $('#jp_'+i).text(data.jp2);
+        $('#jpj_'+i).text(data.jpj2);
+        $('#jpy_'+i).text(data.jpy2);
+        $('#jpt_'+i).text(data.jpt2);
+        $('#df_'+i).text(data.df2);
+      }      
+    }
+    if(ele){
+      $(".qingshaonianzu_tab").removeClass("hover");
+      $(ele).addClass("hover");
     }
   }
 

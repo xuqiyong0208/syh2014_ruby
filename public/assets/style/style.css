@@ -46,14 +46,14 @@ input { border: none;}
     float:left;
 }
 
-.nav { height: 124px; margin-top: 100px; background: #36a0dc; font-size: 18px; color: #FFF;}
+.nav { height: 50px; margin-top: 100px; background: #36a0dc; font-size: 15px; color: #FFF;}
 .nav a { color: #FFF;}
 .nav .firstMenu li { float: left; display: block;}
 .nav .firstMenu li.home { margin-right: 30px;}
 .nav .firstMenu li.home a { 
 	width: 76px; 
-	height: 94px;
-	padding-top: 30px;
+	height: 45px;
+	padding-top: 5px;
 	display: block;
 	background: #b0da0e;
 	text-align: right; 
@@ -64,30 +64,30 @@ input { border: none;}
 	display: block; 
 	float: left; 
 	width: 58px;
-	height: 77px;
-	padding-top: 30px; 
+	height: 45px;
+	padding-top: 5px;
 	background: #f0f0f0; 
 	color: #36a0dc; 
 	text-align: right; 
 	word-wrap: break-word; 
 	letter-spacing: 20px; 
 }
-.nav .firstMenu li .secondMenu { display: block; width: 230px; float: left; padding: 26px 0 0 30px;}
+.nav .firstMenu li .secondMenu { display: block; width: 220px; float: left; margin-left: 10px;}
 .nav .firstMenu li .liw { width: 318px;}
 
-.secondMenu a { width: 80px; padding: 5px 0 5px 10px; display: inline-block;}
+.secondMenu a { width: 80px;  display: inline-block; margin: 3px 0 0 23px;}
 .secondMenu a:hover { text-decoration: underline;}
 
 
 .main { padding-top: 20px;}
-.main .box { margin-bottom: 20px;}
+.main .box { margin-bottom: 10px;}
 
 /*--首页轮播--*/
 .ad { font-size: 0px; width: 495px; float: left; margin-right: 20px;}
-.scroll { width:495px; height:280px; overflow:hidden; position:relative;}
+.scroll { width:495px; height:257px; overflow:hidden; position:relative;}
 .slider { position:absolute;}
-.slider li { position: relative; width:495px; height:280px; z-index: 8;}
-.slider img { width:495px; height:280px; display:block; z-index: 9; position: absolute;}
+.slider li { position: relative; width:495px; height:257px; z-index: 8;}
+.slider img { width:495px; height:257px; display:block; z-index: 9; position: absolute;}
 
 .num { position:absolute; right:200px; bottom:3px; z-index:11;}
 .num li { 
@@ -102,8 +102,8 @@ input { border: none;}
 
 /*--公告--*/
 .notice { width: 635px; float: left;}
-.notice_head { height: 56px; line-height: 56px; color: #FFF; font-size: 18px; text-align: center;}
-.notice_head li { height: 56px; width: 150px; float: left; margin-right: 11px; margin-right:8px\9; cursor: pointer;}
+.notice_head { height: 33px; line-height: 33px; color: #FFF; font-size: 15px; text-align: center;}
+.notice_head li { height: 33px; width: 150px; float: left; margin-right: 11px; margin-right:8px\9; cursor: pointer;}
 .notice_head li:last-child { margin: 0; width: 152px;}
 .notice_head li.notice_t1 { background: #36a0dc;}
 .notice_head li.notice_t2 { background: #f79907;}
@@ -122,8 +122,8 @@ input { border: none;}
 
 .b_title {
 	background:#b0da0e; 
-	height: 50px; 
-	line-height: 50px;
+	height: 36px; 
+	line-height: 36px;
 	color: #FFF;
 	padding: 0 50px;
 	margin-bottom: 10px; 
@@ -133,34 +133,58 @@ input { border: none;}
 
 /*--奖牌榜--*/
 .rankingList {}
-.adolescent { width: 730px; margin-right: 20px; float: left;}
-.colleges { width: 400px; float: left;}
+.adolescent { width: 570px; margin-right: 10px; float: left;}
+.colleges { width: 570px; float: left;}
 .adolescent h2, .colleges h2 { 
-	font-size: 18px; 
-	color: #fff;
-	background: #d61971; 
-	text-align: center; 
+	font-size: 15px; 
+	color: #d61971; 
 	height: 36px; 
 	line-height: 36px;
 }
+.adolescent h2 i, .colleges h2 i {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	background: url(../images/h2.png) no-repeat;
+	margin-right: 10px;
+}
+.adco { overflow: hidden;}
+.adco li { 
+	float: left;
+	height: 30px;
+	margin-right: 3px;
+	font-size: 14px; 
+}
+.adco li:last-child { margin: 0;}
+.adco li a { 
+	width: 130px; 
+	height: 30px;
+	padding: 0 5px;
+	line-height: 30px;
+	display: block;
+	border-radius: 5px 5px 0 0;
+	background: #36a0dc url(../images/d.png) no-repeat right center;
+	color: #FFF;
+}
+.adco li a.hover, .adco li a:hover { background: #f79907 url(../images/d.png) no-repeat right center;} 
+.colleges .adco li a { width: 273px;}
+
+
 .tableList { text-align: center; background: #f0f0f0;}
 .tableList thead {color: #f79907;}
-.tableList thead a {
-		color: #fff; 
-		background: #f79907; 
-		padding: 5px 10px; 
-		border-radius: 5px; 
-}
 .tableList thead a:hover { box-shadow: 0px 0px 3px rgba(247,153,7,0.8);}
 .tableList th, .tableList td { 
-	height: 45px; 
+	height: 30px; 
 	padding: 0px 10px; 
 	border-bottom: 2px #FFFFFF solid; 
-	font-size: 18px;
+	font-size: 14px;
 }
-.tableList td {color: #36a0dc;}
+.tableList td {color: #333;}
 
-.td_j, .td_y, .td_t { width: 25px; height: 25px; display: inline-block; padding-left: 15px;}
+.tableList tr.tbg { background: #f8f8f8;}
+.tableList tr:hover { background: #e6e6e6;}
+
+.td_j, .td_y, .td_t { width: 60px; height: 25px; line-height: 25px; display: inline-block;}
 .td_j { background:url(../images/td_j.png) no-repeat; background-size: 15px 25px;}
 .td_y { background:url(../images/td_y.png) no-repeat; background-size: 15px 25px;}
 .td_t { background:url(../images/td_t.png) no-repeat; background-size: 15px 25px;}

@@ -49,6 +49,8 @@ $(function(){
 $(function(){
 	$(".schedule > table > tbody > tr:even").addClass("orange_font");
 	$(".competition_con > table > tbody > tr:odd").css("background","#f0f0f0");
+	$(".tableList > tbody > tr:odd").addClass("tbg");
+
 })
 
 //搜索input

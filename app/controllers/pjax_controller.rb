@@ -39,6 +39,9 @@ class PjaxController < ApplicationController
     jp_list = ShiTeShuJP.where(ttkey: ttkeys).all
     jp_list.each do |p|
       jp_hash[p[:ttkey]][:jp2] = p[:hjj] + p[:hjy] + p[:hjt]
+      jp_hash[p[:ttkey]][:jpj2] = p[:hjj]
+      jp_hash[p[:ttkey]][:jpy2] = p[:hjy]
+      jp_hash[p[:ttkey]][:jpt2] = p[:hjt]
     end
 
     zf_list = ShiTeShuDF.where(ttkey: ttkeys).all
