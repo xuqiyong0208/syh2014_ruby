@@ -76,7 +76,7 @@ module NokogiriHelper
 
     arr = []
     links.each_with_index do |dom, i|
-      break if i >= 7
+      break if i >= 10
       href =  base_path + dom.attributes['href'].to_s[6..-1]
       content = dom.content.to_s
       arr << {href: href, content: content}
