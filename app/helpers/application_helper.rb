@@ -68,7 +68,7 @@ end
   #静态文件url
   def static_url(file)
     @temp[:version_path] ||= Settings.static_version.presence && "/#{Settings.static_version}"
-    "#{Settings.static_root}#{@temp[:version_path]}#{file}?v=3"
+    "#{Settings.static_root}#{@temp[:version_path]}#{file}?v=4"
   end
 
   #获取文件url
