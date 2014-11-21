@@ -22,10 +22,12 @@
 
                 <div class="competition_con">
                   <div class="group_list">
-                    <% @zubies.each do |zubie| %>
-                    <li style="margin-bottom: 15px;"><a href="<%~ "/phb/dxjp/#{@project[:dhkey]}?zubie=#{URI.escape(zubie[:zubie].to_s.strip)}" %>"><%~ zubie[:zubie].to_s.strip %></a></li>
+                    <% colors = ["5B9E44","7E363F","7C863A","44489E","7E5C36","449E89","7E4936","8F3D80","44749E","7E7936","70449E"] %>
+                    <% colors_sum = colors.size %>
+                    <% @zubies.each_with_index do |zubie, i| %>
+                    <li style="margin-bottom: 15px;"><a style="background:#<%~ colors[i%colors_sum] %>;" href="<%~ "/phb/dxjp/#{@project[:dhkey]}?zubie=#{URI.escape(zubie[:zubie].to_s.strip)}" %>"><%~ zubie[:zubie].to_s.strip %></a></li>
                     <% end %>
-                    <li style="margin-bottom: 15px;"><a href="<%~ "/phb/dxjp/#{@project[:dhkey]}?zubie=#{URI.escape('汇总')}" %>">汇总</a></li>
+                    <li style="margin-bottom: 15px;"><a style="background:#<%~ colors[@zubies.size%colors_sum] %>;" href="<%~ "/phb/dxjp/#{@project[:dhkey]}?zubie=#{URI.escape('汇总')}" %>">汇总</a></li>
                   </div>
                 </div>
 

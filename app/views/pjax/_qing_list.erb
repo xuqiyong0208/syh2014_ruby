@@ -1,4 +1,4 @@
 <% news ||= [] %>
 <% news.each do |data| %>
-<li><a href="<%~ data[:href] %>" target="_blank"><%~ data[:content] %></a></li>
+<li><a href="<%~ data[:href] %>" title="<%~ data[:content] %>" target="_blank"><%~ data[:content] %></a></li>
 <% end %>

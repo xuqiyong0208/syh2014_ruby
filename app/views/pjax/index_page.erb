@@ -24,12 +24,12 @@
       <div class="notice_body">
         <ul class="notice_b1">
           <% @tongzhi.each do |tongzhi| %>
-          <li><a href="/tzgg/<%~ tongzhi.nid_news %>"><%~ tongzhi.ctitle %></a></li>
+          <li><a href="/tzgg/<%~ tongzhi.nid_news %>" title="<%~ tongzhi.ctitle %>"><%~ tongzhi.ctitle %></a></li>
           <% end %>
         </ul>
         <ul class="notice_b2" style="display: none">
           <% @news.each do |news| %>
-          <li><a href="/ssxw/<%~ news.nid_news %>"><%~ news.ctitle %></a></li>
+          <li><a href="/ssxw/<%~ news.nid_news %>" title="<%~ news.ctitle %>"><%~ news.ctitle %></a></li>
           <% end %>
         </ul>
         <ul class="notice_b3" id="qing_gonggao_box" style="display: none">
