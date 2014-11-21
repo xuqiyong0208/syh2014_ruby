@@ -14,7 +14,7 @@ input { border: none;}
 .head { overflow: hidden; background: url(../images/_top.jpg) no-repeat center top #FFFFFF;}
 
 .head_countDown { height: 160px; text-align: right; overflow: hidden; padding-top: 30px;}
-.head_countDown h1 { font-size: 24px; color: #FFF; margin-bottom: 20px;}
+.head_countDown h1 { font-size: 24px; color: #FFF; margin-bottom: 45px;}
 .head_countDown .countDown { font-size: 16px; color: #FFF; float: right;}
 .head_countDown .countDown p { margin-bottom: 5px;}
 
@@ -327,7 +327,7 @@ input { border: none;}
 
 /*列表*/
 .article_list { padding: 20px 60px;}
-.article_list li { line-height: 32px; font-size: 16px; list-style: inside square; color: #b0da0e;}
+.article_list li { line-height: 32px; font-size: 14px; list-style: inside square; color: #b0da0e;}
 .article_list li a { color: #333;}
 .article_list li a:hover { color: #b0da0e; text-decoration: underline;}
 .article_list li span { float: right; color: #999;}
@@ -387,7 +387,7 @@ input { border: none;}
 	color: #333;
 }
 .rule_list li img { width: 100px; height: 100px;}
-.rule_list li a p { font-size: 18px; text-align: center; height:32px; line-height: 32px;}
+.rule_list li a p { font-size: 14px; text-align: center; height:32px; line-height: 32px;}
 
 .rule_explain {}
 .rule_img { text-align: center;}
