@@ -373,8 +373,9 @@ input { border: none;}
 	height: 24px; 
 	line-height: 24px; 
 	font-size: 14px; 
-	text-align: center;
+	text-align: right;
 }
+.competition_con table tbody tr td { padding-right: 5px;}
 
 /*竞赛规则*/
 .rule_list { overflow: hidden;}
