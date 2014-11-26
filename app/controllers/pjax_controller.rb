@@ -53,6 +53,21 @@ class PjaxController < ApplicationController
 
     #puts @jiangpaibang
 
+    gx = []
+    gx << {dwjc:"上海体育学院", jp:116, jpj:48, jpy:35, jpt:33, df:1761.5}
+    gx << {dwjc:"上海交通大学", jp:104, jpj:48, jpy:28, jpt:28, df:1417}
+    gx << {dwjc:"同济大学", jp:93, jpj:34, jpy:32, jpt:27, df:1374}
+    gx << {dwjc:"华东师范大学", jp:80, jpj:44, jpy:16, jpt:20, df:1132}
+    gx << {dwjc:"复旦大学", jp:72, jpj:40, jpy:14, jpt:18, df:1169}
+    gx << {dwjc:"上海大学", jp:62, jpj:20, jpy:22, jpt:20, df:1236.5}
+    gx << {dwjc:"东华大学", jp:58, jpj:30, jpy:16, jpt:12, df:955.5}
+    gx << {dwjc:"上海海事大学", jp:48, jpj:15, jpy:19, jpt:14, df:843}
+    gx << {dwjc:"上海财经大学", jp:43, jpj:25, jpy:9, jpt:9, df:732}
+    gx << {dwjc:"上海立信会计学院", jp:42, jpj:15, jpy:11, jpt:16, df:673}
+
+    @gx_jiangpaibang = gx
+
+    #p @gx_jiangpaibang
 
     #拼出所有比分的hash，为之后排序使用
     
@@ -293,16 +308,16 @@ class PjaxController < ApplicationController
   end
 
   #排行榜-单项奖牌
-  def phb_dxjp_page
+  def dxcj_dxjp_page
 
     @projects = WebProjectSchedule.where(zhkey: 3).all
 
-    halt_page(:phb_dxjp_page)
+    halt_page(:dxcj_dxjp_page)
   end
 
   #排行榜-单项奖牌-详情
-  def phb_dxjp_detail_page
-
+  def dxcj_dxjp_detail_page
+    
     dhkey = params[:id].to_i
     @project = WebProjectSchedule.where(zhkey: 3, dhkey: dhkey).first
     halt_404 if @project.nil?
@@ -315,24 +330,24 @@ class PjaxController < ApplicationController
       else
         @score = DB.fetch("select sum(jpshu) hjjp, sum(ypshu) hjyp, sum(tpshu) hjtp, min(dwjc) dwjc FROM dbo.syh_danxingtongji where dhkey = #{@project[:dhkey]} and zubie = #{DB.literal(@zubie)} group by dwjc order by hjjp desc, hjyp desc, hjtp desc").to_a
       end
-      halt_page(:phb_dxjp_detail_page)
+      halt_page(:dxcj_dxjp_detail_page)
     else
       #选择分组
       @zubies = DB.fetch("select zubie from syh_zubie where dhkey = #{@project[:dhkey]} order by zubie").to_a
-      halt_page(:phb_dxjp_group_page)
+      halt_page(:dxcj_dxjp_group_page)
     end
   end
 
   #排行榜-单项总分
-  def phb_dxzf_page
+  def dxcj_dxzf_page
 
     @projects = WebProjectSchedule.where(zhkey: 3).all
 
-    halt_page(:phb_dxzf_page)
+    halt_page(:dxcj_dxzf_page)
   end
 
   #排行榜-单项总分-详情
-  def phb_dxzf_detail_page
+  def dxcj_dxzf_detail_page
 
     dhkey = params[:id].to_i
     @project = WebProjectSchedule.where(zhkey: 3, dhkey: dhkey).first
@@ -355,11 +370,11 @@ class PjaxController < ApplicationController
 
       #p @score
 
-      halt_page(:phb_dxzf_detail_page)
+      halt_page(:dxcj_dxzf_detail_page)
     else
       #选择分组
       @zubies = DB.fetch("select zubie from syh_zubie where dhkey = #{@project[:dhkey]} order by zubie").to_a
-      halt_page(:phb_dxzf_group_page)
+      halt_page(:dxcj_dxzf_group_page)
     end
   end
 
@@ -560,6 +575,29 @@ class PjaxController < ApplicationController
     end
 
     halt_page(:zwh_page)
+  end
+
+  #赛会奖项
+  def shjx_page
+
+    @list = []
+    dir = "#{Sinarey.root}/public/saihuijiangxiang"
+    if File.directory?(dir)
+      files = Dir.new(dir).to_a.sort[2..-1]
+    else
+      files = []
+    end
+    @count = files.size
+    @page = (tmp = params[:page].to_i) > 0 ? tmp : 1
+    @per_page = 50
+
+    files = files[(@page-1)*@per_page,@per_page]
+    files.each do |filename|
+      atime = File.atime(File.join(dir,filename)).strftime("%Y-%m-%d")
+      @list << {filename: filename, atime:atime}
+    end
+
+    halt_page(:shjx_page)
   end
 
   #单项成绩

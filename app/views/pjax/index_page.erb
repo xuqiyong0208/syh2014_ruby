@@ -41,19 +41,19 @@
   </div>
 
   <div class="box rankingList">
-    <div class="b_title"><h1>奖牌榜</h1><a href="/phb">更多...</a></div>
+    <div class="b_title"><h1>排行榜</h1><a href="/phb">更多...</a></div>
       <div class="adolescent">
         <h2><i></i>青少年组</h2>
           <ul class="adco">
-            <li><a href="javascript:;" class="qingshaonianzu_tab hover" onclick="load_jiangpaibang('jp1',this);">奖牌榜</a></li>
-            <li><a href="javascript:;" class="qingshaonianzu_tab" onclick="load_jiangpaibang('df1',this);">总分榜</a></li>
+            <li><a href="javascript:;" class="qingshaonianzu_tab hover" onclick="load_jiangpaibang('jp1',this);">团体奖牌榜</a></li>
+            <li><a href="javascript:;" class="qingshaonianzu_tab" onclick="load_jiangpaibang('df1',this);">团体总分榜</a></li>
             <li><a href="javascript:;" class="qingshaonianzu_tab" onclick="load_jiangpaibang('jp2',this);">重点奖牌榜</a></li>
             <li><a href="javascript:;" class="qingshaonianzu_tab" onclick="load_jiangpaibang('df2',this);">重点总分榜</a></li>
           </ul>
           <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableList">
             <thead>
               <tr>
-              <th>区域</th>
+              <th>单位</th>
               <th>奖牌</th>
               <th><span class="td_j">金牌</span></th>
               <th><span class="td_y">银牌</span></th>
@@ -78,13 +78,13 @@
       <div class="colleges">
         <h2><i></i>高校组</h2>
           <ul class="adco">
-              <li><a href="javascript:;">重点奖牌榜</a></li>
-              <li><a href="javascript:;">重点总分榜</a></li>
+              <li><a href="javascript:;" class="gaoxiaozu_tab hover" onclick="load_gx_jiangpaibang('jp',this);">团体奖牌榜</a></li>
+              <li><a href="javascript:;" class="gaoxiaozu_tab" onclick="load_gx_jiangpaibang('df',this);">团体总分榜</a></li>
           </ul>
           <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableList">
             <thead>
               <tr>
-              <th>区域</th>
+              <th width="100px">单位</th>
               <th>奖牌</th>
               <th><span class="td_j">金牌</span></th>
               <th><span class="td_y">银牌</span></th>
@@ -95,13 +95,13 @@
             </thead>
             <% 10.times.each do |index| %>
             <tr>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
+              <td style="width:100px;display:inline-block;line-height:30px;white-space:nowrap;overflow: hidden;text-overflow:ellipsis;" id="<%~ "gx_dwjc_#{index}" %>"></td>
+              <td id="<%~ "gx_jp_#{index}" %>"></td>
+              <td id="<%~ "gx_jpj_#{index}" %>"></td>
+              <td id="<%~ "gx_jpy_#{index}" %>"></td>
+              <td id="<%~ "gx_jpt_#{index}" %>"></td>
+              <td id="<%~ "gx_df_#{index}" %>"></td>
+              <td><%~ index+1 %></td>
             </tr>
             <% end %>
           </table>
@@ -396,6 +396,46 @@
     }
   }
 
+  window.gx_jiangpaibang = <%= oj_dump(@gx_jiangpaibang).gsub('</','<\/') %>;
+
+  function GxSortByJP(a, b){
+    var y = a.jp;
+    var x = b.jp;
+    return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+  }
+
+  function GxSortByDF(a, b){
+    var y = a.df;
+    var x = b.df;
+    return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+  }
+
+  function load_gx_jiangpaibang(column,ele){
+    var list,
+        type;
+    if(column=="jp"){
+      list = window.gx_jiangpaibang.sort(GxSortByJP);
+    }else if(column=="df"){
+      list = window.gx_jiangpaibang.sort(GxSortByDF);
+    }
+    list = list.slice(0,10);
+    for (var i=0;i<list.length;i++)
+    {
+      var data = list[i];
+      $('#gx_dwjc_'+i).text(data.dwjc).attr('title',data.dwjc);
+      $('#gx_jp_'+i).text(data.jp);
+      $('#gx_jpj_'+i).text(data.jpj);
+      $('#gx_jpy_'+i).text(data.jpy);
+      $('#gx_jpt_'+i).text(data.jpt);
+      $('#gx_df_'+i).text(data.df);
+    }
+    if(ele){
+      $(".gaoxiaozu_tab").removeClass("hover");
+      $(ele).addClass("hover");
+    }
+  }
+
+
   function load_qing_news() {
     $.ajax({
         url:'/api/get_qing_data_json',
@@ -412,6 +452,8 @@
   }
 
   load_jiangpaibang('jp1');
+
+  load_gx_jiangpaibang('jp');
 
   load_qing_news();
 </script>

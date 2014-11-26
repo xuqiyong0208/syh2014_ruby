@@ -13,12 +13,6 @@ class PjaxRoute < PjaxController
 
   route :get, '/xzzx' do dispatch(:xzzx_page) end   #下载中心
 
-  route :get, '/dxcj' do dispatch(:dxcj_page) end   #单项成绩-选择项目
-
-  route :get, '/dxcj/:id' do dispatch(:dxcj_detail_page) end   #单项成绩-比赛列表
-
-  route :get, '/dxcj/:id/:imkey' do dispatch(:dxcj_score_page) end   #单场比赛详细结果
-
   route :get, '/ccjl' do dispatch(:ccjl_page) end   #超创记录
 
   route :get, '/dpdf' do dispatch(:dpdf_page) end   #带牌带分
@@ -33,14 +27,19 @@ class PjaxRoute < PjaxController
 
   route :get, '/phb/bszf/sublist_json' do dispatch(:phb_bszf_sublist_json) end #排行榜-比赛总分-各个项目细节 
 
-  
-  route :get, '/phb/dxjp' do dispatch(:phb_dxjp_page) end #排行榜-单项奖牌  
+  route :get, '/dxcj/dxjp' do dispatch(:dxcj_dxjp_page) end #排行榜-单项奖牌  
 
-  route :get, '/phb/dxjp/:id' do dispatch(:phb_dxjp_detail_page) end #排行榜-单项奖牌-详情s
+  route :get, '/dxcj/dxjp/:id' do dispatch(:dxcj_dxjp_detail_page) end #排行榜-单项奖牌-详情s
 
-  route :get, '/phb/dxzf' do dispatch(:phb_dxzf_page) end #排行榜-单项总分    
+  route :get, '/dxcj/dxzf' do dispatch(:dxcj_dxzf_page) end #排行榜-单项总分    
 
-  route :get, '/phb/dxzf/:id' do dispatch(:phb_dxzf_detail_page) end #排行榜-单项总分-详情
+  route :get, '/dxcj/dxzf/:id' do dispatch(:dxcj_dxzf_detail_page) end #排行榜-单项总分-详情
+
+  route :get, '/dxcj' do dispatch(:dxcj_page) end   #单项成绩-选择项目
+
+  route :get, '/dxcj/:id' do dispatch(:dxcj_detail_page) end   #单项成绩-比赛列表
+
+  route :get, '/dxcj/:id/:imkey' do dispatch(:dxcj_score_page) end   #单场比赛详细结果
 
   route :get, '/phb/zdxmjp' do dispatch(:phb_zdxmjp_page) end #排行榜-重点项目奖牌
 
@@ -69,5 +68,7 @@ class PjaxRoute < PjaxController
   route :get, '/tzgg/:id' do dispatch(:tzgg_detail_page) end   #通知公告-详细
 
   route :get, '/zwh' do dispatch(:zwh_page) end #组委会
+
+  route :get, '/shjx' do dispatch(:shjx_page) end #赛会奖项
 
 end

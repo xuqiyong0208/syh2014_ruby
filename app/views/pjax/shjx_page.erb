@@ -1,0 +1,27 @@
+<div class="main clear">
+	<div class="box">
+    	<div class="m_title">
+        	<h2>当前位置：赛事/赛会奖项</h2>
+        </div>
+        <div class="m_body">
+
+          <div class="article_list">
+               <ul>
+                    <% if @list.present? %>
+                        <% @list.each do |hsh| %>
+                        <li>
+                            <a target="_blank" href="/saihuijiangxiang/<%= URI.escape(hsh[:filename]) %>"><%~ hsh[:filename] %></a>
+                            <span><%~ hsh[:atime] %></span>
+                        </li>
+                        <% end %>
+                    <% elsif @page==1 %>
+                        <h3 style="text-align:center;">暂时没有可供下载的文件</h3>
+                    <% end %>
+                </ul>
+            </div>
+
+            <%= paginate CustomPagination.new(@count,@page,@per_page) %>
+
+        </div>
+    </div>
+</div>

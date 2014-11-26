@@ -84,5 +84,13 @@ $(function(){
 	$(".ccs_table").css("width",len6*170);
 })
 
+//排行榜5 奖牌积分菜单
+$(function(){
+	$(".competition_a span").hover(function(){
+			$(this).find("ul").css("display","block");
+		},function(){
+			$(this).find("ul").css("display","none");
+		});	
+})
 
 

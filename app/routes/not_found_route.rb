@@ -2,21 +2,11 @@
 class NotFoundRoute < ApplicationController
 
   def not_found_response
-    if request.get?
-      erb :'404'
-    else
-      content_type=:json
-      halt_json({res:false,flag:'404'})
-    end
+    halt_404
   end
 
   def rescue_response
-    if request.get?
-      erb :'500'
-    else
-      content_type=:json
-      halt_json({res:false,flag:'500'})
-    end
+    halt_404
   end
 
   get '*' do

@@ -1,10 +1,21 @@
 <div class="main clear">
 	<div class="box">
     	<div class="m_title">
-        	<h2>当前位置：赛事/单项成绩/<%~ @project[:xmmc].to_s.strip %></h2>
+        	<h2>当前位置：赛事/单项成绩/<span style="cursor:pointer;" onclick="window.location.href='/dxcj/<%~ @project[:dhkey] %>';"><%~ @project[:xmmc].to_s.strip %></span></h2>
         </div>
         <div class="m_body">
           <div class="competition">
+            
+            <div class="group_btn">
+                <a href="javascript:;" class="hover"><span>青少年组</span></a>
+                <a href="javascript:alert('暂时还没有高校组的数据');"><span>高校组</span></a>
+            </div>
+
+            <div class="competition_a">
+              <a href="/dxcj" class="c_btn_a hover"><i></i>单项成绩</a>
+              <a href="/dxcj/dxzf" class="c_btn_a"><i></i>单项总分</a>
+              <a href="/dxcj/dxjp" class="c_btn_a"><i></i>单项奖牌</a>
+            </div>
             
             <div class="competition_con">
               <table width="100%" border="0" cellspacing="5" cellpadding="0" style="width: 800px; margin: 0 auto;">

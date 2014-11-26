@@ -1,7 +1,7 @@
 <div class="main clear">
 	<div class="box">
     	<div class="m_title">
-        	<h2>当前位置：赛事/排行榜/<span style="cursor:pointer;" onclick="window.location.href='/phb/dxjp';">单项奖牌</span></h2>
+        	<h2>当前位置：赛事/单项成绩/<span style="cursor:pointer;" onclick="window.location.href='/dxcj/dxzf';">单项总分</span></h2>
         </div>
         <div class="m_body">
         	  <div class="competition">
@@ -12,12 +12,9 @@
                 </div>
 
                 <div class="competition_a">
-                  <a href="/phb" class="ca01">比赛奖牌</a>
-                  <a href="/phb/bszf" class="ca02">比赛总分</a>
-                  <a href="/phb/dxjp" class="ca01 hover">单项奖牌</a>
-                  <a href="/phb/dxzf" class="ca02">单项总分</a>
-                  <a href="/phb/zdxmjp" class=""><i></i>重点项目奖牌</a>
-                  <a href="/phb/zdxmzf"><i></i>重点项目总分</a>
+                  <a href="/dxcj" class="c_btn_a"><i></i>单项成绩</a>
+                  <a href="/dxcj/dxzf" class="c_btn_a hover"><i></i>单项总分</a>
+                  <a href="/dxcj/dxjp" class="c_btn_a"><i></i>单项奖牌</a>
                 </div>
 
                 <div class="competition_con">
@@ -25,7 +22,7 @@
                       <ul>
                             <% @projects.each do |project| %>
                             <% xmmc = project[:xmmc].to_s.strip %>
-                            <li><a href="/phb/dxjp/<%~ project[:dhkey] %>"><img src="<%= static_url "/images/rule_#{project[:dhkey]}.png" %>" alt="" /><p><%~ xmmc %></p></a></li>
+                            <li><a href="/dxcj/dxzf/<%~ project[:dhkey] %>"><img src="<%= static_url "/images/rule_#{project[:dhkey]}.png" %>" alt="" /><p><%~ xmmc %></p></a></li>
                             <% end %>
                         </ul>
                     </div>

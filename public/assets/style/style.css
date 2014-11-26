@@ -422,25 +422,59 @@ input { border: none;}
 
 /*---竞赛分类a--*/
 .competition_a { padding: 10px 0;}
-.competition_a a { 
+
+.competition_a span { 
 	display: inline-block; 
 	height: 40px; 
 	line-height: 40px; 
-	margin-right: 20px;
-	font-size: 16px; 
+	margin-right: 10px;
+	font-size: 14px; 
 	color: #333;
-	padding: 0 10px;
+	cursor: pointer;
+	position: relative;
+	width: 120px;
 }
-.competition_a a.ca01 { background: url(../images/competition_a.png) no-repeat 2px top; padding-left: 45px;}
-.competition_a a.ca02 { background: url(../images/competition_a.png) no-repeat 2px bottom; padding-left: 45px;}
-.competition_a a i { 
+.competition_a span ul { 
+	display:none; 
+	background: #f1f1f1; 
+	width: 100px; 
+	padding: 0 10px; 
+	position: absolute; 
+	top: 40px; 
+	left: 0px;
+}
+.competition_a span ul a { 
+	color: #333; 
+	display: block; 
+	 text-align: right; 
+	font-size: 12px; 
+	height: 30px; 
+	line-height: 30px;
+}
+.competition_a span ul a:hover { text-decoration: underline;}
+
+.competition_a p { padding: 0 10px; text-align: right;}
+.competition_a p.ca01 { background: url(../images/competition_a.png) no-repeat 2px top; padding-left: 45px;}
+.competition_a p.ca02 { background: url(../images/competition_a.png) no-repeat 2px bottom; padding-left: 45px;}
+.competition_a a i, .competition_a p i { 
 	width: 10px; 
 	height: 10px; 
 	background: #b0da0e; 
 	display: inline-block;
 	margin-right: 5px; 
 }
-.competition_a a:hover, .competition_a a.hover { background-color: #ededed; border-radius: 5px;}
+.competition_a span:hover, .competition_a span.hover { background-color: #ededed; border-radius: 5px;}
+
+.c_btn_a {
+	display: inline-block; 
+	height: 40px; 
+	line-height: 40px; 
+	margin-right: 20px;
+	font-size: 14px; 
+	color: #333;
+	padding: 0 10px;
+}
+.c_btn_a:hover, .c_btn_a.hover { background-color: #ededed; border-radius: 5px;} 
 
 /*----A组B组...----*/
 .group_list { padding: 10px 0; overflow: hidden;}
