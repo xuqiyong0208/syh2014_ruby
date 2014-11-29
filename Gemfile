@@ -22,8 +22,9 @@ if RUBY_PLATFORM =~ /mingw/i
 	gem "sanitize", '~> 2.1'
 else
 	gem "sanitize"
-  gem 'puma'
 end
+
+gem 'puma'
 
 gem 'timerizer'
 
