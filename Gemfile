@@ -1,5 +1,5 @@
 source 'http://ruby.taobao.org/'
-#source 'http://rubygems.org/'
+#source 'https://rubygems.org/'
 
 
 if RUBY_PLATFORM !~ /mingw/i and ENV['SINAREY_ENV'] == 'heroku'
@@ -10,8 +10,6 @@ end
 gem 'i18n'
 
 gem 'thin'
-
-gem 'puma'
 
 gem 'sinarey', '1.0.4'
 gem 'sinatra-contrib'
@@ -24,6 +22,7 @@ if RUBY_PLATFORM =~ /mingw/i
 	gem "sanitize", '~> 2.1'
 else
 	gem "sanitize"
+  gem 'puma'
 end
 
 gem 'timerizer'

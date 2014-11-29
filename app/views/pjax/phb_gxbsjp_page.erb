@@ -1,0 +1,91 @@
+<div class="main clear">
+	<div class="box">
+    	<div class="m_title">
+        	<h2>当前位置：赛事/排行榜/<span style="cursor:pointer;" onclick="window.location.href='/phb';">比赛奖牌</span></h2>
+        </div>
+        <div class="m_body">
+        	  <div class="competition">
+            	
+                <div class="group_btn">
+                  <a href="/phb/bsjp"><span>青少年组</span></a>
+                  <a href="javascript:;" class="hover"><span>高校组</span></a>
+                </div>
+
+                <div class="competition_a">
+                  <a href="/phb/gxbsjp" class="c_btn_a hover"><i></i>比赛奖牌</a>
+                  <a href="/phb/gxbszf" class="c_btn_a"><i></i>比赛总分</a>
+                </div>
+
+                <div class="competition_con">
+                  <div class="cc_table_left">
+                  <table width="445" border="0" cellspacing="5" cellpadding="0">
+                      <thead>
+                      <tr>
+                        <th colspan="5">合计</th>
+                      </tr>
+                      <tr>
+                        <th>单位</th>
+                        <th class="medal_box">金<i class="one">金牌</i></th>
+                        <th class="medal_box">银<i class="two">银牌</i></th>
+                        <th class="medal_box">铜<i class="three">铜牌</i></th>
+                        <th class="medal_box">总数</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                        <% $gxjp_score.each do |jiangpai| %>
+                        <tr>
+                          <td width="50%"><%~ jiangpai[0] %></td>
+                          <td><%~ jiangpai[1] %></td>
+                          <td><%~ jiangpai[2] %></td>
+                          <td><%~ jiangpai[3] %></td>
+                          <td><%~ jiangpai[4] %></td>
+                        </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
+                    </div>
+                    <div class="cc_table_right_s" style="width:512px">
+                      <div class="ccs_table">
+                        <% skip_column = 0 %>
+                        <% $gxjp_projects.each_with_index do |xmmc, i| %>
+                        <table border="0" cellspacing="5" cellpadding="0">
+                          <thead>
+                          <tr>
+                            <th colspan="3"><%~ xmmc %></th>
+                          </tr>
+                          <tr>
+                            <th class="medal_box">金<i class="one">金牌</i></th>
+                            <th class="medal_box">银<i class="two">银牌</i></th>
+                            <th class="medal_box">铜<i class="three">铜牌</i></th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <% if ['篮球','排球','足球','棒球','板球'].include? xmmc %>
+                            <% $gxjp_score.each do |jiangpai| %>
+                            <tr>
+                              <td><%~ jiangpai[5+i*3-skip_column] %></td>
+                              <td>&nbsp;</td>
+                              <td>&nbsp;</td>
+                            </tr>
+                            <% end %>
+                            <% skip_column += 2 %>
+                          <% else %>
+                            <% $gxjp_score.each do |jiangpai| %>
+                            <tr>
+                              <td><%~ jiangpai[5+i*3-skip_column] %></td>
+                              <td><%~ jiangpai[5+i*3+1-skip_column] %></td>
+                              <td><%~ jiangpai[5+i*3+2-skip_column] %></td>
+                            </tr>
+                            <% end %>
+                          <% end %>
+                          </tbody>
+                        </table>
+                        <% end %>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

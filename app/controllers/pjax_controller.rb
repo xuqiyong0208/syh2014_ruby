@@ -36,17 +36,39 @@ class PjaxController < ApplicationController
 
     ttkeys = jiangpais.map{|p| p[:ttkey] }
 
-    jp_list = ShiTeShuJP.where(ttkey: ttkeys).all
-    jp_list.each do |p|
-      jp_hash[p[:ttkey]][:jp2] = p[:hjj] + p[:hjy] + p[:hjt]
-      jp_hash[p[:ttkey]][:jpj2] = p[:hjj]
-      jp_hash[p[:ttkey]][:jpy2] = p[:hjy]
-      jp_hash[p[:ttkey]][:jpt2] = p[:hjt]
-    end
+    # jp_list = ShiTeShuJP.where(ttkey: ttkeys).all
+    # jp_list.each do |p|
+    #   jp_hash[p[:ttkey]][:jp2] = p[:hjj] + p[:hjy] + p[:hjt]
+    #   jp_hash[p[:ttkey]][:jpj2] = p[:hjj]
+    #   jp_hash[p[:ttkey]][:jpy2] = p[:hjy]
+    #   jp_hash[p[:ttkey]][:jpt2] = p[:hjt]
+    # end
 
-    zf_list = ShiTeShuDF.where(ttkey: ttkeys).all
-    zf_list.each do |p|
-      jp_hash[p[:ttkey]][:df2] = p[:hjf]
+    # zf_list = ShiTeShuDF.where(ttkey: ttkeys).all
+    # zf_list.each do |p|
+    #   jp_hash[p[:ttkey]][:df2] = p[:hjf]
+    # end
+
+    #青少年组，重点榜
+    zd = {}
+    zd["黄浦"] = {jp2:342.5,jpj2:189,jpy2:83,jpt2:70.5,df2:4974.5}
+    zd["浦东"] = {jp2:282,jpj2:190,jpy2:50,jpt2:42,df2:4270.5}
+    zd["徐汇"] = {jp2:273.5,jpj2:160,jpy2:70.5,jpt2:43,df2:4010}
+    zd["普陀"] = {jp2:174.5,jpj2:87.5,jpy2:39,jpt2:48,df2:3163.5}
+    zd["闵行"] = {jp2:174,jpj2:100,jpy2:40,jpt2:34,df2:2903.5 }
+    zd["长宁"] = {jp2:156.5,jpj2:78.5,jpy2:35,jpt2:43,df2:2825.5}
+    zd["宝山"] = {jp2:172,jpj2:92,jpy2:48,jpt2:32,df2:2615}
+    zd["杨浦"] = {jp2:139,jpj2:97.5,jpy2:21.5,jpt2:20,df2:2452}
+    zd["静安"] = {jp2:91,jpj2:55.5,jpy2:18,jpt2:17.5,df2:2091}
+    zd["嘉定"] = {jp2:95.5,jpj2:47,jpy2:21.5,jpt2:27,df2:1866.5}
+
+    jp_hash.each do |k,jp|
+      ct = jp[:dwjc]
+      if zd[ct]
+        jp.merge!(zd[ct])
+      else
+        jp.merge!({jp2:0,jpj2:0,jpy2:0,jpt2:0,df2:0})
+      end
     end
 
     @jiangpaibang = jp_hash.values
@@ -231,6 +253,13 @@ class PjaxController < ApplicationController
     halt_page(:phb_bsjp_page)
   end
 
+  #排行榜-高校比赛奖牌
+  def phb_gxbsjp_page
+
+    halt_page(:phb_gxbsjp_page)
+  end
+
+
   #排行榜-比赛奖牌-所有项目的细节
   def phb_bsjp_sublist_json
 
@@ -273,6 +302,12 @@ class PjaxController < ApplicationController
     @jiangpais = DB.fetch("select #{feilds.join(',')} from dbo.市运会总分 order by zdf desc, dwjc").to_a
 
     halt_page(:phb_bszf_page)
+  end
+
+  #排行榜-高校比赛总分
+  def phb_gxbszf_page
+
+    halt_page(:phb_gxbszf_page)
   end
 
   #排行榜-比赛总分-所有项目的细节

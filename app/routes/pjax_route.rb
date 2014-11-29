@@ -27,6 +27,10 @@ class PjaxRoute < PjaxController
 
   route :get, '/phb/bszf/sublist_json' do dispatch(:phb_bszf_sublist_json) end #排行榜-比赛总分-各个项目细节 
 
+  route :get, '/phb/gxbsjp' do dispatch(:phb_gxbsjp_page) end #排行榜-高校比赛奖牌
+
+  route :get, '/phb/gxbszf' do dispatch(:phb_gxbszf_page) end #排行榜-高校比赛总分
+
   route :get, '/dxcj/dxjp' do dispatch(:dxcj_dxjp_page) end #排行榜-单项奖牌  
 
   route :get, '/dxcj/dxjp/:id' do dispatch(:dxcj_dxjp_detail_page) end #排行榜-单项奖牌-详情s
