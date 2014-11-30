@@ -31,7 +31,7 @@ class PjaxController < ApplicationController
     jiangpais = DB.fetch("select * from dbo.市运会单位总分 order by zjp + zyp + ztp DESC, zjp DESC, zyp DESC, ztp DESC").to_a
 
     jiangpais.each do |p|
-      jp_hash[p[:ttkey]] = {dwjc: p[:dwjc].to_s.strip, jp1: p[:zjp] + p[:zyp] + p[:ztp], jpj1: p[:zjp].to_i, jpy1: p[:zyp].to_i, jpt1: p[:ztp].to_i, df1: p[:zdf]}
+      jp_hash[p[:ttkey]] = {dwjc: p[:dwjc].to_s.strip}
     end
 
     ttkeys = jiangpais.map{|p| p[:ttkey] }
@@ -48,6 +48,29 @@ class PjaxController < ApplicationController
     # zf_list.each do |p|
     #   jp_hash[p[:ttkey]][:df2] = p[:hjf]
     # end
+
+    #青少年组，团体榜
+    tt = {}
+    tt["浦东"] = {jp1:478,jpj1:266.625,jpy1:110,jpt1:101.375,df1:6847.625}
+    tt["黄浦"] = {jp1:447.625,jpj1:232.875,jpy1:116.875,jpt1:97.875,df1:6493.75}
+    tt["徐汇"] = {jp1:389.625,jpj1:210.125,jpy1:104.125,jpt1:75.375,df1:5673.75}
+    tt["普陀"] = {jp1:281.25,jpj1:116.875,jpy1:61.875,jpt1:102.5,df1:5080.75}
+    tt["闵行"] = {jp1:273.875,jpj1:140.875,jpy1:65.5,jpt1:67.5,df1:4367.875}
+    tt["长宁"] = {jp1:248.125,jpj1:119.5,jpy1:56.5,jpt1:72.125,df1:4253}
+    tt["杨浦"] = {jp1:228.625,jpj1:128.875,jpy1:56.5,jpt1:43.25,df1:3684.625}
+    tt["静安"] = {jp1:172.75,jpj1:88.75,jpy1:36,jpt1:48,df1:3615.25}
+    tt["宝山"] = {jp1:185.25,jpj1:98.125,jpy1:49.875,jpt1:37.25,df1:2811.25}
+    tt["嘉定"] = {jp1:149.375,jpj1:65.25,jpy1:29.75,jpt1:54.375,df1:2665}
+    tt["虹口"] = {jp1:140.875,jpj1:67,jpy1:22.375,jpt1:51.5,df1:2542.125}
+    jp_hash.each do |k,jp|
+      ct = jp[:dwjc]
+      if tt[ct]
+        jp.merge!(tt[ct])
+      else
+        jp.merge!({jp1: 0, jpj1: 0, jpy1: 0, jpt1: 0, df1: 0})
+      end
+    end
+
 
     #青少年组，重点榜
     zd = {}
